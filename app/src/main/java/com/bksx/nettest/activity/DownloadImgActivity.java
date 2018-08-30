@@ -2,6 +2,7 @@ package com.bksx.nettest.activity;
 
 import android.Manifest;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -32,6 +33,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Arrays;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
