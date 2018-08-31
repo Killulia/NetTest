@@ -35,6 +35,7 @@ public class GreenDaoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_green_dao);
         builder = new StringBuilder();
+        //测试 kraken
         copyDatabase();
 //        quearyAllCodes();
     }
