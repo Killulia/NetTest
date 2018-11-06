@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 //        loadData(Constants.NEWS_URL);
 //        rodents[0] = new Mouse();
 //        rodents[1] = new Gerbil();
-//        rodents[2] = new Hamster();
+//        rodents[hehe] = new Hamster();
 //        for (Rodent rodent : rodents) {
 //            rodent.play();
 //        }

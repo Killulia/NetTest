@@ -89,7 +89,6 @@ public class DownloadImgActivity extends AppCompatActivity implements View.OnCli
                 });
 
 
-
             }
 
             @Override
@@ -102,7 +101,6 @@ public class DownloadImgActivity extends AppCompatActivity implements View.OnCli
                         Picasso.with(context).load(file).into(img);
                     }
                 });
-
 
 
             }
@@ -188,7 +186,7 @@ public class DownloadImgActivity extends AppCompatActivity implements View.OnCli
 
                             @Override
                             public void onNext(final ResponseBody response) {
-                                new Thread(){
+                                new Thread() {
                                     @Override
                                     public void run() {
                                         write2Disk(response, listener);

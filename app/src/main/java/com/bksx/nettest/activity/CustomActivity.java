@@ -38,11 +38,12 @@ public class CustomActivity extends AppCompatActivity {
     String haystack = "aaaaa";
     String needle = "bba";
     int result;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom);
-        result = leetTest( haystack,  needle);
+        result = leetTest(haystack, needle);
         Log.d("ccg", "result:" + result);
         Toast.makeText(this, "result:" + result, Toast.LENGTH_SHORT).show();
         retrofit = new Retrofit.Builder()
@@ -59,33 +60,32 @@ public class CustomActivity extends AppCompatActivity {
         call.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<NewsBean>() {
-            @Override
-            public void onSubscribe(Disposable d) {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
-            }
+                    }
 
-            @Override
-            public void onNext(NewsBean newsBean) {
-                Log.d("JSON", newsBean.getResult().getData().get(0).getAuthor_name());
-            }
+                    @Override
+                    public void onNext(NewsBean newsBean) {
+                        Log.d("JSON", newsBean.getResult().getData().get(0).getAuthor_name());
+                    }
 
-            @Override
-            public void onError(Throwable e) {
+                    @Override
+                    public void onError(Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
-
+                    }
+                });
 
 
     }
 
     private int leetTest(String haystack, String needle) {
-        if (haystack.contains(needle)){
+        if (haystack.contains(needle)) {
 
             return haystack.indexOf(needle);
         }

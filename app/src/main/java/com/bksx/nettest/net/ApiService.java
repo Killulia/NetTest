@@ -1,6 +1,8 @@
 package com.bksx.nettest.net;
 
 import com.bksx.nettest.bean.NewsBean;
+import com.bksx.nettest.bean.mob.LoginResponse;
+import com.bksx.nettest.bean.mob.RegisterResponse;
 
 import java.util.Map;
 
@@ -22,5 +24,14 @@ public interface ApiService {
     //图片下载
     @GET("timg?image&quality=80&size=b9999_10000&sec=1535519934469&di=7a952eee8b1d60b03177a8b3fc5cfd1f&imgtype=0&src=http%3A%2F%2Fuploads.5068.com%2Fallimg%2F171128%2F73-1G12QR142.jpg")
     Observable<ResponseBody> downloadImg();
+
+
+    //Mob用户注册
+    @GET("user/rigister")
+    Observable<RegisterResponse> regist(@Query("key")String key, @Query("username")String username, @Query("password")String password);
+
+    //Mob用户登录
+    @GET("user/login")
+    Observable<LoginResponse> login(@Query("key")String key,@Query("username")String username,@Query("password")String password);
 
 }

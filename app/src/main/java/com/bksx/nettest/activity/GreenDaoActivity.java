@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.bksx.nettest.BaseApplication;
 import com.bksx.nettest.R;
 import com.bksx.nettest.bean.RegionCode;
 import com.bksx.nettest.db.DbManager;
@@ -111,6 +112,7 @@ public class GreenDaoActivity extends AppCompatActivity {
     private void quearySomeCodes(String condition) {
         regionCodes.clear();
         regionCodeDao = DbManager.getDaoSession(context).getRegionCodeDao();
+//        regionCodeDao = ((BaseApplication)getApplication()).getDaoSession().getRegionCodeDao();
         regionCodes.addAll(regionCodeDao.queryBuilder()
                 .where(RegionCodeDao.Properties.Id.like("%" + condition + "%"))
                 //降序
@@ -126,6 +128,7 @@ public class GreenDaoActivity extends AppCompatActivity {
      */
     private void quearyAllCodes() {
         regionCodeDao = DbManager.getDaoSession(context).getRegionCodeDao();
+//        regionCodeDao = ((BaseApplication)getApplication()).getDaoSession().getRegionCodeDao();
         regionCodes.addAll(regionCodeDao.loadAll());
         printReginCodes();
     }

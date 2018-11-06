@@ -10,5 +10,9 @@ public class Constants {
 //    public static final String BASE_URL = "http://v.juhe.cn/toutiao/index?type=top&key=6ce2dfc57ad2abef3f6a51cf02cf9993";
     public static final String IMG_URL = "https://timgsa.baidu.com/";
 
+    public static final String MOB_BASE = "http://apicloud.mob.com/";
+
+    public static final String APP_KEY = "2806500c59398";
+
 
 }

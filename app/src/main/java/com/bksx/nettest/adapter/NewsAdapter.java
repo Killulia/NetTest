@@ -38,6 +38,7 @@ public class NewsAdapter extends BaseAdapterHelper<NewsBean.ResultBean.DataBean>
         return convertView;
     }
 
+
     class ViewHolder{
 
         ImageView header;

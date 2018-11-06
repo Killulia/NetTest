@@ -1,10 +1,14 @@
 package com.bksx.nettest.db;
 
+import android.app.Activity;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.bksx.nettest.BaseApplication;
 import com.bksx.nettest.gen.DaoMaster;
 import com.bksx.nettest.gen.DaoSession;
+
+import static org.greenrobot.greendao.test.DbTest.DB_NAME;
 
 
 public class DbManager {
@@ -17,12 +21,11 @@ public class DbManager {
     private static DaoMaster mDaoMaster;
     private static DaoSession mDaoSession;
 
-    private Context mContext;
+    private static Context mContext;
 
     private DbManager(Context context) {
         this.mContext = context;
-        // 初始化数据库信息
-        mDevOpenHelper = new DaoMaster.DevOpenHelper(context, DB_NAME);
+        this.mDevOpenHelper = new Helper(context, DB_NAME);
         getDaoMaster(context);
         getDaoSession(context);
     }
@@ -35,6 +38,9 @@ public class DbManager {
                 }
             }
         }
+//        // 初始化数据库信息
+//        mDevOpenHelper = BaseApplication.getInstance().getmDevOpenHelper();
+
         return mDbManager;
     }
 
@@ -115,5 +121,7 @@ public class DbManager {
         }
         return mDaoSession;
     }
+
+
 
 }
