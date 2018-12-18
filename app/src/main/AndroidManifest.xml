@@ -24,25 +24,42 @@
         tools:replace="android:name">
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="5badc945f1f55634ef000184"></meta-data>
+            android:value="5badc945f1f55634ef000184" />
 
         <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.RxActivity"></activity>
+        <activity android:name=".activity.RxActivity" />
         <activity android:name=".activity.CustomActivity" />
         <activity android:name=".activity.DownloadImgActivity" />
         <activity android:name=".activity.GreenDaoActivity" />
         <activity android:name=".activity.OkioActivity" />
         <activity android:name=".activity.BannerActivity" />
         <activity android:name=".activity.Camera2Activity" />
-        <activity android:name=".activity.UmActivity">
-
-        </activity>
+        <activity android:name=".activity.UmActivity" />
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".activity.ViewActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".activity.NetActivity"
+            android:label="@string/title_activity_net"
+            android:theme="@style/AppTheme.NoActionBar">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".activity.LeetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

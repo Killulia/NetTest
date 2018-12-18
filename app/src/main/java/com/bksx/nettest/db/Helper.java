@@ -22,7 +22,6 @@ public class Helper extends DaoMaster.DevOpenHelper{
         super.onUpgrade(db, oldVersion, newVersion);
         if (oldVersion<newVersion){
             //升级操作
-
             Log.d("akb", "oldVersion  <  newVersion");
         }else {
             Log.d("akb", "oldVersion  >=  newVersion");

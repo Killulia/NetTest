@@ -28,6 +28,7 @@ public class BaseApplication extends Application{
         initGreenDao();
         UMShareAPI.get(this);//初始化sdk
         UMConfigure.init(this,"5badc945f1f55634ef000184","Umeng", UMConfigure.DEVICE_TYPE_PHONE,"");
+        UMConfigure.setLogEnabled(true);
         //开启debug模式，方便定位错误，具体错误检查方式可以查看http://dev.umeng.com/social/android/quick-integration的报错必看，正式发布，请关闭该模式
 //        Config.DEBUG = true;
     }

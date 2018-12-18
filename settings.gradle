@@ -1,1 +1,1 @@
-include ':app', ':progress', ':customview'
+include ':app', ':progress', ':customview', ':mvptest'
