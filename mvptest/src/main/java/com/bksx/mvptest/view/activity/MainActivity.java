@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         try {
-            mainPresenter.loadImg(Constans.IMG_URL,IMG_PATH);
+            mainPresenter.loadImg(Constans.IMG_URL,IMG_PATH);//改成retrofit+rxjava后第一个参数没用
         } catch (IOException e) {
             e.printStackTrace();
         }
