@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Custom1Activity">
 
-    <com.bksx.customview.customview.CircleView
-        android:id="@+id/cv_circle"
+    <com.bksx.customview.customview.CheckView
+        android:id="@+id/cv_test"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -8,12 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-
 import com.bksx.mvptest.presenter.MainPresenterImpl;
 import com.bksx.mvptest.R;
 import com.bksx.mvptest.util.Constans;
 import com.bksx.mvptest.view.interfaces.MainView;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -54,12 +52,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void showImg(final Bitmap bitmap) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                ivImg.setImageBitmap(bitmap);
-            }
-        });
+        //okhttp 写法:因为回调在子线程，需要切换到ui线程
+//        runOnUiThread(new Runnable() {
+//            @Override
+//            public void run() {
+//                ivImg.setImageBitmap(bitmap);
+//            }
+//        });
+
+        //RxJava
+        ivImg.setImageBitmap(bitmap);
 
     }
 }

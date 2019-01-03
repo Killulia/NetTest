@@ -3,6 +3,7 @@ package com.bksx.mvptest.model;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.provider.SyncStateContract;
+import android.util.Log;
 
 import com.bksx.mvptest.net.ApiService;
 import com.bksx.mvptest.presenter.MainPresenter;
@@ -22,6 +23,7 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
+import okio.Okio;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -85,23 +87,31 @@ public class MainModelImpl implements MainModel {
             file.createNewFile();
             initRetrofit();
             retrofitInterface.downloadImg()
-                    .subscribeOn(Schedulers.io()) //TODO 优化使写文件也在IO,activity回调不写runonuithread
+                    .subscribeOn(Schedulers.io()) //TODO 优化使写文件也在IO,activity回调不写runonuithread;写文件改为OKio
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(new Consumer<ResponseBody>() {
                         @Override
                         public void accept(ResponseBody responseBody) throws Exception {
                             byte[] bytes = responseBody.bytes();
-                            FileOutputStream fos = new FileOutputStream(file);
-                            fos.write(bytes);
-                            fos.close();
+//                            FileOutputStream fos = new FileOutputStream(file);
+//                            fos.write(bytes);
+//                            fos.close();
+                            Okio.buffer(Okio.sink(file)).write(bytes).close();
+                            Log.d("ccg", "okio");
+                            showImg(file);
+//                            Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+//                            if (bitmap != null) {
+//                                presenter.showImg(bitmap);
+//                            }
+
                         }
                     });
 
+        }else {           //TODO 不应该不加else直接放到外面，因为并发会导致先调用showImg，此时io操作在进行照片文件还没有，导致无法显示，即先执行了total再okio
+            showImg(file);
         }
-        final Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
-        if (bitmap != null) {
-            presenter.showImg(bitmap);
-        }
+        Log.d("ccg", "total");
+
 
 
     }
@@ -110,7 +120,6 @@ public class MainModelImpl implements MainModel {
     private void initRetrofit() {
         OkHttpClient client = OkHttpUtil.getOkHttpSingletonInstance();
         //Log.i(TAG, "---->initRetrofit: " + client.toString());
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constans.IMG_URL)
                 .client(client)
@@ -120,5 +129,12 @@ public class MainModelImpl implements MainModel {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
         retrofitInterface = retrofit.create(ApiService.class);
+    }
+
+    private void showImg(File file) {
+        final Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+        if (bitmap != null) {
+            presenter.showImg(bitmap);
+        }
     }
 }

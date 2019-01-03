@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.bksx.nettest.R;
 import com.bksx.nettest.bean.FanxingB;
+import com.bksx.nettest.leetcode.Solution;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +17,7 @@ public class LeetActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leet);
-        int result = l0engthOfLongestSubstring("dvdf");
+        int result = Solution.numJewelsInStones("aA","aAAbbbb ");
         Log.d("ccg", "result:" + result);
 
 
