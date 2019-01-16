@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 
@@ -13,9 +14,14 @@ import com.bksx.customview.Custom1Activity;
 public class CheckView extends View {
 
     private  int width,heigth;
-    private Paint grayPaint,yellowPaint;
-    private boolean isChecked;
+    private Paint grayPaint,yellowPaint,whitePaint;
+    private boolean isChecked = true;
+    //圆环进度计数器
+    private int ringCounter = 0;
+    private int circleConuter = 0;
     private float[] points = {-200,30,0,200,0,200,300,-200};
+
+
     public boolean isChecked() {
         return isChecked;
     }
@@ -42,6 +48,12 @@ public class CheckView extends View {
         yellowPaint.setColor(Color.YELLOW);
         yellowPaint.setStrokeCap(Paint.Cap.ROUND);
 
+       whitePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+       whitePaint.setStyle(Paint.Style.FILL);
+//       whitePaint.setStrokeWidth(20);
+       whitePaint.setColor(Color.WHITE);
+       whitePaint.setStrokeCap(Paint.Cap.ROUND);
+
     }
 
     public CheckView(Context context,  AttributeSet attrs) {
@@ -62,6 +74,31 @@ public class CheckView extends View {
             canvas.drawLines(points, grayPaint);
             return;
         }
+        ringCounter += 12;
+        if (ringCounter >= 360) {
+            ringCounter = 360;
+
+        }else {
+            canvas.drawArc(-400,-400,400,400,90,ringCounter,false, yellowPaint);
+        }
+
+        if (ringCounter == 360){
+            yellowPaint.setStyle(Paint.Style.FILL);
+//            canvas.drawCircle(width / 2,heigth / 2,200,yellowPaint);
+            canvas.drawArc(-400,-400,400,400,90,ringCounter,true, yellowPaint);
+
+            circleConuter+=4;
+
+            if (200-circleConuter>=0){
+                Log.d("ccg", "circle:"+circleConuter);
+                canvas.drawCircle(0,0,200-circleConuter,whitePaint);//TODO 注意坐标系已经移到中心，圆心应是0,0
+            }
+
+        }
+
+
+        postInvalidate();
+
 
 
 

@@ -32,8 +32,6 @@ public class CanvasTestView extends View {
         Display display = activity.getWindowManager().getDefaultDisplay();
         width = display.getWidth();
         heigth = display.getHeight();
-
-
         paint.setStyle(Paint.Style.STROKE);
     }
 

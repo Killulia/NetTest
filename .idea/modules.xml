@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/NetTest.iml" filepath="$PROJECT_DIR$/NetTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework/framework.iml" filepath="$PROJECT_DIR$/framework/framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvptest/mvptest.iml" filepath="$PROJECT_DIR$/mvptest/mvptest.iml" />
       <module fileurl="file://$PROJECT_DIR$/progress/progress.iml" filepath="$PROJECT_DIR$/progress/progress.iml" />
     </modules>
