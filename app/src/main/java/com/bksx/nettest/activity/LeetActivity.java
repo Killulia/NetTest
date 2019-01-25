@@ -3,8 +3,10 @@ package com.bksx.nettest.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.bksx.nettest.R;
+import com.bksx.nettest.algorithm.Effection;
 import com.bksx.nettest.bean.FanxingB;
 import com.bksx.nettest.leetcode.Solution;
 
@@ -13,13 +15,17 @@ import java.util.Map;
 
 public class LeetActivity extends AppCompatActivity {
 
+    int[] nums = {2,4,3,5,1,8,6};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leet);
-        int result = Solution.numJewelsInStones("aA","aAAbbbb ");
-        Log.d("ccg", "result:" + result);
-
+//        int result = Solution.numJewelsInStones("aA","aAAbbbb ");
+//        int result = Solution.myAtoi("20000000000000000000");
+//        Log.d("ccg", "result:" + result);
+        Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
+        Effection.binarySerach(nums,6);
 
 
     }

@@ -25,7 +25,9 @@ public class OkHttpUtil {
         if (client == null) {
             synchronized (OkHttpClient.class) {
                 if (client == null) {
-                    client = new OkHttpClient();
+                    client = new OkHttpClient.Builder()
+                    .addInterceptor(new LoggingInterceptor())
+                    .build();
                 }
             }
         }
