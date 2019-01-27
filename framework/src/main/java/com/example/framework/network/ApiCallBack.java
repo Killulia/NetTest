@@ -4,6 +4,8 @@ package com.example.framework.network;
 import android.util.Log;
 import com.example.framework.LogUtils;
 import com.example.framework.basemodel.BaseModel;
+import com.example.framework.bean.ToutiaoBean;
+
 import org.reactivestreams.Subscriber;
 import io.reactivex.Observer;
 import io.reactivex.functions.Consumer;
@@ -14,7 +16,7 @@ import retrofit2.HttpException;
  * create on 2018/11/13
  * description 自定义请求数据回调和过滤
  */
-public abstract class ApiCallBack<M extends BaseModel> implements Observer<M> {
+public abstract class ApiCallBack<M extends ToutiaoBean> implements Observer<M> {
 
     @Override
     public void onComplete() {
@@ -50,7 +52,7 @@ public abstract class ApiCallBack<M extends BaseModel> implements Observer<M> {
      */
     private void handleStatusCode(M baseModel) {
         Log.d("ccg", "handleStatusCode");
-        String statusCode = baseModel.code;
+        String statusCode = String.valueOf(baseModel.getError_code());
         StatusCodeEnum statusCodeEnum = StatusCodeEnum.getByCode(statusCode);
         switch (statusCodeEnum) {
             case RESULT_OK:  //请求成功

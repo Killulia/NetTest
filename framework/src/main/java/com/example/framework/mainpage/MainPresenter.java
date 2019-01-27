@@ -2,10 +2,8 @@ package com.example.framework.mainpage;
 
 import android.util.Log;
 
-import com.example.framework.basemodel.BaseModel;
 import com.example.framework.basepresenter.BasePresenter;
 import com.example.framework.bean.DataBean;
-import com.example.framework.bean.NewsBean;
 import com.example.framework.bean.ToutiaoBean;
 import com.example.framework.network.ApiCallBack;
 
@@ -21,7 +19,7 @@ public class MainPresenter extends BasePresenter<MainView> {
     }
 
     public void getNewsData(Map map) {
-        subscribe(apiService.getNewsList(map), new ApiCallBack<BaseModel<NewsBean>>() {
+        subscribe(apiService.getNewsList(map), new ApiCallBack<ToutiaoBean<DataBean>>() {
             @Override
             public void onSubscribe(Disposable d) {
                 Log.d("ccg", "mainp onSubscribe");
@@ -29,7 +27,7 @@ public class MainPresenter extends BasePresenter<MainView> {
             }
 
             @Override
-            public void onSuccess(BaseModel<NewsBean> toutiaoBeanBaseModel) {
+            public void onSuccess(ToutiaoBean<DataBean> toutiaoBeanBaseModel) {
                 Log.d("ccg", "mainp success");
                 view.getNewsData(toutiaoBeanBaseModel);
             }

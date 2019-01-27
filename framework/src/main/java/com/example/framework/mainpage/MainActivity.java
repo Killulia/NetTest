@@ -1,14 +1,12 @@
 package com.example.framework.mainpage;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.example.framework.BaseMvpActivity;
+import com.example.framework.LogUtils;
 import com.example.framework.R;
-import com.example.framework.basemodel.BaseModel;
 import com.example.framework.bean.DataBean;
-import com.example.framework.bean.NewsBean;
 import com.example.framework.bean.ToutiaoBean;
 
 import java.util.HashMap;
@@ -32,11 +30,13 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         return new MainPresenter(this);
     }
 
+
+
     @Override
-    public void getNewsData(BaseModel<NewsBean> toutiaoBeanBaseModel) {
+    public void getNewsData(ToutiaoBean<DataBean> toutiaoBeanBaseModel) {
         Log.d("ccg", "回调");
-        for (NewsBean.ResultBean.DataBean datum : toutiaoBeanBaseModel.data.getResult().getData()) {
-            Log.d("ccg", "item: "+datum.getTitle());
+        for (DataBean datum : toutiaoBeanBaseModel.getResult().getData()) {
+            LogUtils.d("标题:"+datum.getTitle());
         }
     }
 }

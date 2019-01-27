@@ -2,7 +2,7 @@ package com.example.framework.network;
 
 public enum StatusCodeEnum {
 
-    RESULT_OK("0000", "请求成功"),
+    RESULT_OK("0", "请求成功"),
 
     RESULT_UNLOGIN("2001", "用户未登录"),
 

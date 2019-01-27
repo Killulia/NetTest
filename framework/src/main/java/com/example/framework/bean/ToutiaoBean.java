@@ -1,6 +1,8 @@
 package com.example.framework.bean;
 
-public class ToutiaoBean<T>{
+import java.io.Serializable;
+
+public class ToutiaoBean<T> implements Serializable {
 
     /**
      * reason : 成功的返回
