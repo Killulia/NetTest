@@ -1,1 +1,1 @@
-include ':app', ':progress', ':customview', ':mvptest', ':framework'
+include ':app', ':progress', ':customview', ':mvptest', ':framework', ':sdkdemo', ':artexploration'
