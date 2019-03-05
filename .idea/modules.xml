@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NetTest.iml" filepath="$PROJECT_DIR$/NetTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/NetTest.iml" filepath="$PROJECT_DIR$/.idea/NetTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/artexploration/artexploration.iml" filepath="$PROJECT_DIR$/artexploration/artexploration.iml" />
       <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" />

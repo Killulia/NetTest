@@ -30,4 +30,8 @@ public class ImgUrl {
         urls.add("http://05imgmini.eastday.com/mobile/20190305/2019030514_21773ef12ee94727b5110d39e13f0cf6_2517_mwpm_03200403.jpg");
         urls.add("http://05imgmini.eastday.com/mobile/20190305/20190305144818_920c9bef9418a35bde3dc6df4b304716_3_mwpm_03200403.jpg");
     }
+
+    public static List<String> getUrls(){
+        return urls;
+    }
 }

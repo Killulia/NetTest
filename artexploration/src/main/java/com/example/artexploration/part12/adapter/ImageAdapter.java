@@ -8,6 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 
+import com.example.artexploration.R;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class ImageAdapter extends BaseAdapter {
@@ -41,10 +44,18 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
+        ViewHolder holder = null;
         if (convertView == null) {
+            convertView = inflater.inflate(R.layout.item_grid, parent,false);
+            holder = new ViewHolder();
+            holder.imageView = convertView.findViewById(R.id.img_item);
+            convertView.setTag(holder);
+        }else {
+            holder = (ViewHolder) convertView.getTag();
         }
-        return null;
+        Picasso.get().load(urls.get(position)).into(holder.imageView);
+
+        return convertView;
     }
 
    static class ViewHolder{
