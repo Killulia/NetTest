@@ -1,16 +1,15 @@
 package com.bksx.nettest.activity;
 
-import android.Manifest;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
+
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,13 +18,11 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.bksx.nettest.R;
-import com.bksx.nettest.bean.NewsBean;
 import com.bksx.nettest.interfaces.DownloadListener;
 import com.bksx.nettest.net.ApiService;
 import com.bksx.nettest.utils.Constants;
 import com.bksx.nettest.utils.OkHttp3Utils;
 import com.squareup.picasso.Picasso;
-import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -33,16 +30,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Arrays;
+
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
-import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.Response;
 import okhttp3.ResponseBody;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -112,6 +106,7 @@ public class DownloadImgActivity extends AppCompatActivity implements View.OnCli
         };
         initNet();
         initView();
+
 
     }
 

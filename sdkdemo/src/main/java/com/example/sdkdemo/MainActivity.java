@@ -2,7 +2,6 @@ package com.example.sdkdemo;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -14,6 +13,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import androidx.appcompat.app.AppCompatActivity;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.PlatformActionListener;
 import cn.sharesdk.framework.ShareSDK;
@@ -22,6 +22,7 @@ import cn.sharesdk.tencent.qq.QQ;
 public class MainActivity extends AppCompatActivity {
 
     private Button btLogin;
+
 
 
     @Override

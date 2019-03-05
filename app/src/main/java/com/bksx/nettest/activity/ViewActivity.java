@@ -1,20 +1,14 @@
 package com.bksx.nettest.activity;
 
-import android.support.constraint.ConstraintLayout;
+import androidx.constraintlayout.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 import com.bksx.nettest.R;
 import com.bksx.nettest.custom.GestureListenerImpl;
-import com.bksx.nettest.custom.MyTextView;
 import com.bksx.nettest.custom.TestButton;
 import com.bksx.nettest.custom.TestLayoyt;
 

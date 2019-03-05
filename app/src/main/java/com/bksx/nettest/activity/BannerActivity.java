@@ -3,7 +3,6 @@ package com.bksx.nettest.activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -14,9 +13,7 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.bksx.nettest.R;
-import com.bksx.nettest.interfaces.DaggerFactoryActivityComponent;
 import com.bksx.nettest.testclass.DraggerA;
-import com.bksx.nettest.testclass.DraggerA_Factory;
 import com.bksx.nettest.testclass.DraggerB;
 import com.youth.banner.Banner;
 
@@ -24,6 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class BannerActivity extends AppCompatActivity {
     @Inject
@@ -37,7 +36,6 @@ public class BannerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_banner);
         initImg();
         showDialog();
-        DaggerFactoryActivityComponent.create().inject(this);
 //        showPopWindow();
     }
 

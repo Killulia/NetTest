@@ -1,11 +1,10 @@
 package com.bksx.nettest.custom;
 
 import android.content.Context;
-import android.support.constraint.ConstraintLayout;
+import androidx.constraintlayout.ConstraintLayout;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.ViewGroup;
 
 public class TestLayoyt extends ConstraintLayout {
 
