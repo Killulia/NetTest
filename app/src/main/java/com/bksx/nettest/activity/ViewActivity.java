@@ -1,7 +1,6 @@
 package com.bksx.nettest.activity;
 
-import androidx.constraintlayout.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -11,6 +10,8 @@ import com.bksx.nettest.R;
 import com.bksx.nettest.custom.GestureListenerImpl;
 import com.bksx.nettest.custom.TestButton;
 import com.bksx.nettest.custom.TestLayoyt;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ViewActivity extends AppCompatActivity {
 
@@ -34,14 +35,14 @@ public class ViewActivity extends AppCompatActivity {
 
     private void initView() {
 
-        mButton = findViewById(R.id.bt_double);
-        mLayout = findViewById(R.id.myLayout);
+//        mButton = findViewById(R.id.bt_double);
+//        mLayout = findViewById(R.id.myLayout);
 //        mLayout.setOnTouchListener(this);
 //        mButton.setOnTouchListener(this);
 
 //        mLayout.setOnClickListener(this);
 //        mButton.setOnClickListener(this);
-        Toast.makeText(this, "mLayout.isClickable():" + mLayout.isClickable(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "mLayout.isClickable():" + mLayout.isClickable(), Toast.LENGTH_SHORT).show();
 
     }
 

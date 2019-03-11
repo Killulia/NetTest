@@ -1,13 +1,14 @@
 package com.bksx.nettest.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.bksx.nettest.R;
-import com.bksx.nettest.fragment.Camera2BasicFragment;
 import com.bksx.nettest.testclass.DraggerA;
 import com.bksx.nettest.testclass.DraggerA_Factory;
 import com.bksx.nettest.testclass.DraggerB;
+import com.example.android.camera2basic.Camera2BasicFragment;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Camera2Activity extends AppCompatActivity {
 

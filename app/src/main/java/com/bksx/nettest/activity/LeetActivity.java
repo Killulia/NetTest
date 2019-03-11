@@ -1,6 +1,5 @@
 package com.bksx.nettest.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -12,6 +11,8 @@ import com.bksx.nettest.leetcode.Solution;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LeetActivity extends AppCompatActivity {
 

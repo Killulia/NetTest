@@ -1,11 +1,12 @@
 package com.bksx.nettest.custom;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Button;
+
+import androidx.appcompat.widget.AppCompatButton;
 
 public class TestButton extends AppCompatButton {
 

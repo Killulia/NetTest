@@ -1,7 +1,6 @@
 package com.bksx.nettest.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +13,8 @@ import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 
 import java.util.Map;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class UmActivity extends AppCompatActivity {
 
