@@ -82,9 +82,11 @@ public class CameraFragment extends Fragment implements View.OnClickListener{
      * 请求权限
      */
     private void requestCameraPermission() {
+        Log.d("ccg", "requestCameraPermission");
         if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)){//点击拒绝后
             new Camera2BasicFragment.ConfirmationDialog().show(getChildFragmentManager(),"点击拒绝后");
         }else {//点击过允许或者不再询问，第一次进必走这里
+            Log.d("ccg", "sury");
             requestPermissions(new String[]{Manifest.permission.CAMERA},REQUEST_CAMERA_PERMISSION);
         }
     }
