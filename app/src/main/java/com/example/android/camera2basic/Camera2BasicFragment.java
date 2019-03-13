@@ -1027,12 +1027,13 @@ public class Camera2BasicFragment extends Fragment
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             final Fragment parent = getParentFragment();
             return new AlertDialog.Builder(getActivity())
-                    .setMessage(R.string.request_permission)
+                    .setMessage("是否请求权限")
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             parent.requestPermissions(new String[]{Manifest.permission.CAMERA},
                                     REQUEST_CAMERA_PERMISSION);
+//                            Log.d("ccg", "拒绝了权限");
                         }
                     })
                     .setNegativeButton(android.R.string.cancel,

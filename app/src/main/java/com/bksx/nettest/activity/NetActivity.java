@@ -1,5 +1,7 @@
 package com.bksx.nettest.activity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -17,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -36,12 +39,15 @@ public class NetActivity extends AppCompatActivity {
     ApiService apiService;
     String RxZipString;
 
+    private String[] permissions;
+
     //    retrofit2.Call<List<DataBean>> call;
 //    retrofit2.Call<ToutiaoBean> call;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_net);
+        checkPermissions();
 
 //        Log.d("ccg", url);
 //        RequestBody requestBody = new FormBody.Builder()
@@ -174,6 +180,27 @@ public class NetActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void checkPermissions() {
+        permissions = new String[]{
+                Manifest.permission.INTERNET,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA,
+                Manifest.permission.READ_SMS,
+                Manifest.permission.INSTALL_SHORTCUT,
+                Manifest.permission.MODIFY_AUDIO_SETTINGS
+
+        };
+
+        for (String permission : permissions) {
+            int isGranted = ContextCompat.checkSelfPermission(this,permission);
+            if (isGranted == PackageManager.PERMISSION_GRANTED){
+                Log.d("ccg", permission+ "已授权");
+            }else if (isGranted== PackageManager.PERMISSION_DENIED){
+                Log.d("ccg", permission+ "未授权");
+            }
+        }
     }
 
 }

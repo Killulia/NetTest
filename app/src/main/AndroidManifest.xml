@@ -22,13 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:name">
-        <activity android:name=".activity.WebViewActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".activity.WebViewActivity"/>
 
         <meta-data
             android:name="UMENG_APPKEY"
@@ -41,7 +35,14 @@
         <activity android:name=".activity.GreenDaoActivity" />
         <activity android:name=".activity.OkioActivity" />
         <activity android:name=".activity.BannerActivity" />
-        <activity android:name=".activity.Camera2Activity" />
+        <activity android:name=".activity.Camera2Activity" >
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+
+
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+        </activity>
         <activity android:name=".activity.UmActivity" />
         <activity
             android:name=".wxapi.WXEntryActivity"
@@ -62,12 +63,7 @@
             android:label="@string/title_activity_net"
             android:theme="@style/AppTheme.NoActionBar">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".activity.LeetActivity">
             <!--<intent-filter>-->

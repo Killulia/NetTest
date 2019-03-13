@@ -3,6 +3,7 @@ package com.bksx.nettest.activity;
 import android.os.Bundle;
 
 import com.bksx.nettest.R;
+import com.bksx.nettest.fragment.CameraFragment;
 import com.bksx.nettest.testclass.DraggerA;
 import com.bksx.nettest.testclass.DraggerA_Factory;
 import com.bksx.nettest.testclass.DraggerB;
@@ -18,7 +19,7 @@ public class Camera2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_camera2);
         if (null == savedInstanceState) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, Camera2BasicFragment.newInstance())
+                    .replace(R.id.container, CameraFragment.newInstance())
                     .commit();
         }
 
