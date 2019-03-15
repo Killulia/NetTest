@@ -3,15 +3,13 @@ package com.bksx.nettest.activity;
 import android.os.Bundle;
 
 import com.bksx.nettest.R;
-import com.bksx.nettest.fragment.CameraFragment;
-import com.bksx.nettest.testclass.DraggerA;
-import com.bksx.nettest.testclass.DraggerA_Factory;
-import com.bksx.nettest.testclass.DraggerB;
-import com.example.android.camera2basic.Camera2BasicFragment;
+import com.bksx.nettest.fragment.PermissionFragment;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Camera2Activity extends AppCompatActivity {
+
+public class Camera2AndPermissionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +17,7 @@ public class Camera2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_camera2);
         if (null == savedInstanceState) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, CameraFragment.newInstance())
+                    .replace(R.id.container, PermissionFragment.newInstance())
                     .commit();
         }
 

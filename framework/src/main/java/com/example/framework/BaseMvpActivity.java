@@ -1,9 +1,10 @@
 package com.example.framework;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import com.example.framework.basepresenter.BasePresenter;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * create by libo

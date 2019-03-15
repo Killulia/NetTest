@@ -35,7 +35,7 @@
         <activity android:name=".activity.GreenDaoActivity" />
         <activity android:name=".activity.OkioActivity" />
         <activity android:name=".activity.BannerActivity" />
-        <activity android:name=".activity.Camera2Activity" >
+        <activity android:name=".activity.Camera2AndPermissionActivity" >
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
 

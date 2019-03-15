@@ -3,7 +3,6 @@ package com.bksx.customview.customview;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Dimension;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
