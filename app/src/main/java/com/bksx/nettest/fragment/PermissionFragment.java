@@ -1,6 +1,7 @@
 package com.bksx.nettest.fragment;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.bksx.nettest.BuildConfig;
 import com.bksx.nettest.R;
 
 @RuntimePermissions
@@ -62,9 +64,8 @@ public class PermissionFragment extends Fragment implements View.OnClickListener
     }
 
 
-
     private void show(String str) {
-        Toast.makeText(getActivity(),str,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -154,11 +155,9 @@ public class PermissionFragment extends Fragment implements View.OnClickListener
 //    }
 
 
-
 //    private void doWork() {
 //        Log.d("ccg", "具体工作");
 //    }
-
     public static PermissionFragment newInstance() {
         return new PermissionFragment();
     }
@@ -170,7 +169,7 @@ public class PermissionFragment extends Fragment implements View.OnClickListener
 //                openCamera();
 //                doWork();
                 //TODO 不直接调用doWork,要像 下面这样写法
-                CameraFragmentPermissionsDispatcher.doWorkWithPermissionCheck(this);
+                PermissionFragmentPermissionsDispatcher.doWorkWithPermissionCheck(this);
                 break;
             }
         }
@@ -185,12 +184,16 @@ public class PermissionFragment extends Fragment implements View.OnClickListener
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        CameraFragmentPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+        PermissionFragmentPermissionsDispatcher.onRequestPermissionsResult(this,requestCode,grantResults);
     }
 
     @OnNeverAskAgain(Manifest.permission.CAMERA)
     void doNever() {
         Log.d("ccg", "不再询问");
+        Intent intent = new Intent("com.meizu.safe.security.SHOW_APPSEC");//魅族的
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        intent.putExtra("packageName", BuildConfig.APPLICATION_ID);
+        startActivity(intent);
     }
 
     @OnPermissionDenied(Manifest.permission.CAMERA)
