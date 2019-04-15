@@ -35,7 +35,6 @@ greendao {
 MobSDK {
     appKey "28066eee31e3e"
     appSecret "d3568caa05f30003cc989dbda603a7c0"
-
     MobAPI {}
 }
 

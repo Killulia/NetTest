@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/artexploration/artexploration.iml" filepath="$PROJECT_DIR$/artexploration/artexploration.iml" />
       <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework/framework.iml" filepath="$PROJECT_DIR$/framework/framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kotlin/kotlin.iml" filepath="$PROJECT_DIR$/kotlin/kotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvptest/mvptest.iml" filepath="$PROJECT_DIR$/mvptest/mvptest.iml" />
       <module fileurl="file://$PROJECT_DIR$/progress/progress.iml" filepath="$PROJECT_DIR$/progress/progress.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdkdemo/sdkdemo.iml" filepath="$PROJECT_DIR$/sdkdemo/sdkdemo.iml" />

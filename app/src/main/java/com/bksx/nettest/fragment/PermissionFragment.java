@@ -176,15 +176,17 @@ public class PermissionFragment extends Fragment implements View.OnClickListener
     }
 
 
-    @NeedsPermission(Manifest.permission.CAMERA)
-    void doWork() {
-        Log.d("ccg", "具体工作");
-    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         PermissionFragmentPermissionsDispatcher.onRequestPermissionsResult(this,requestCode,grantResults);
+    }
+
+
+    @NeedsPermission(Manifest.permission.CAMERA)
+    void doWork() {
+        Log.d("ccg", "具体工作");
     }
 
     @OnNeverAskAgain(Manifest.permission.CAMERA)

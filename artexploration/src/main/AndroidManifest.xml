@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.artexploration">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,17 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".part12.GridviewActivity">
+        <service
+            android:name=".part10.MyIntentService"
+            android:exported="false"></service>
+
+        <activity android:name=".part12.GridviewActivity" />
+        <activity android:name=".part12.BitmapActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".part10.ThreadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".part12.BitmapActivity">
-
-        </activity>
-        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
