@@ -68,7 +68,7 @@ public class ImageAdapter extends BaseAdapter {
 //        if (isGridviewable) {
 //            Log.d("ccg", "静止，加载图片工作");
 //            imageView.setTag(uri);
-            Picasso.get().load(urls.get(position)).into(holder.imageView);
+        Picasso.with(context).load(urls.get(position)).into(holder.imageView);
 
 //        }
         return convertView;

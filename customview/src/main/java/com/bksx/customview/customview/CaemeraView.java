@@ -26,7 +26,7 @@ public class CaemeraView extends View {
 
 
     {
-        image = Utils.getAvatar(getResources(), IMAGE_WIDTH);
+        image = Utils.getHeadImg(getResources(), IMAGE_WIDTH);
         camera.rotateX(30);
     }
 

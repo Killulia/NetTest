@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 
 public class MatrixView extends View {
 
-    private static final int IMAGE_WIDTH = (int) Utils.dp2px(150);
+    private static final int IMAGE_WIDTH = (int) Utils.dp2px(70);
     private static final int IMAGE_PADDING = (int) Utils.dp2px(80);
 
     Bitmap bitmap;
@@ -51,19 +51,24 @@ public class MatrixView extends View {
 
 
 //        Camera变换 坐标原点在中央
-//        canvas.translate(getWidth() / 2, getHeight() / 2);
-//        camera.applyToCanvas(canvas);
-//        float x = camera.getLocationX();
-//        float y = camera.getLocationY();
-//        Log.d("tag", "相机位置:" + "x:" + x + ", y:" + y);
-//        canvas.drawBitmap(bitmap, -(IMAGE_WIDTH / 2), -(IMAGE_WIDTH / 2), paint);
-//        canvas.translate(-getWidth() / 2, -getHeight() / 2);
+        canvas.translate(getWidth() , getHeight() / 2);
+        camera.applyToCanvas(canvas);
+        //canvas大小与view的大小一致或者说canvas无边界，最终的大小就是留在View范围内裁去多余的部分
+        float w = canvas.getWidth();
+        float h = canvas.getHeight();
+        float vw = getWidth();
+        float vh = getHeight();
+        Log.d("ccg", "canvas大小："+w+","+h);
+        Log.d("ccg", "view大小："+vw+","+vh);
+        canvas.drawBitmap(bitmap, -(IMAGE_WIDTH / 2), -(IMAGE_WIDTH / 2), paint);
+        canvas.translate(-getWidth() / 2, -getHeight() / 2);
 
         //Camera变换 坐标原点默认，即hencoder方式
-        canvas.translate(-(300+IMAGE_WIDTH/2),-(100+IMAGE_WIDTH/2));
-        camera.applyToCanvas(canvas);
-        canvas.drawBitmap(bitmap, -(IMAGE_WIDTH / 2), -(IMAGE_WIDTH / 2), paint);
-        canvas.translate(300+IMAGE_WIDTH/2,100+IMAGE_WIDTH/2);
+        //ps:这种不对，因为canvas平移会带动camera的坐标系平移
+//        canvas.translate(-(getWidth()/2),-(getHeight()/2));
+//        camera.applyToCanvas(canvas);
+//        canvas.drawBitmap(bitmap, getWidth()/2-IMAGE_WIDTH/2, getHeight()/2-IMAGE_WIDTH/2, paint);
+//        canvas.translate(getWidth()/2,getHeight()/2);
 
 
     }
