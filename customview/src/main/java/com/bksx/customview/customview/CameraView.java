@@ -41,24 +41,33 @@ public class CameraView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
-        camera.save();
-        matrix.reset();
-        camera.rotateX(30);
-        camera.getMatrix(matrix);
-//        camera.applyToCanvas(canvas);
-        camera.restore();
-        matrix.preTranslate(-(200 + width), -(0 + height));
-        matrix.postTranslate(200 + width, 0 + height);
-
+//        camera.save();
+//        matrix.reset();
+//        camera.rotateX(30);
+//        camera.getMatrix(matrix);
+//        camera.restore();
+//        matrix.preTranslate(-(200 + width), -(0 + height));
+//        matrix.postTranslate(200 + width, 0 + height);
+//
+//        canvas.save();
+//        canvas.concat(matrix);
+//        canvas.drawBitmap(bitmap, 200, 0, paint);
+//        canvas.restore();
+/////////////////////////////////////////
         canvas.save();
-        canvas.concat(matrix);
-        canvas.drawBitmap(bitmap, 200, 0, paint);
+        camera.save();
+        camera.rotateX(-10);
+
+
+        camera.applyToCanvas(canvas);
+        camera.restore();
+
+        canvas.drawBitmap(bitmap, point1.x, point1.y, paint);
         canvas.restore();
     }
 
 
-    //TODO 1.利用camera做平移，上方为y轴正方向，是对看到的view做平移，不是对照相机本身平移
+    //TODO 1.利用camera做平移，上方为y轴正方向,将camera的Matrix传给了canvas使得canvas的坐标系也发生了移动
     /*
 
         canvas.save();
