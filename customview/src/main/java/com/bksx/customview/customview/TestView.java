@@ -22,6 +22,9 @@ public class TestView extends View {
     PathDashPathEffect pathEffect;
     private static final float RADIUS = Utils.dp2px(100);
     private static final float ANGLE = 120;
+    private static final float LENGTH = 100;
+    private static final float SINGLE = (360-ANGLE)/20;
+    private float A = (90 + ANGLE / 2) +(5 * SINGLE) - 90;
 
 
     public TestView(Context context, @Nullable AttributeSet attrs) {
@@ -69,5 +72,14 @@ public class TestView extends View {
                 360 - ANGLE,false, paint);
         paint.setPathEffect(null);
 
+        //画指针
+        canvas.drawLine(getWidth() / 2,getHeight()/2,
+                getWidth()/2+(float)Math.cos(Math.toRadians(getAngle(5)))*LENGTH,
+                getHeight()/2+(float)Math.sin(Math.toRadians(getAngle(5)))*LENGTH,paint);
+
+    }
+
+    float getAngle(int num){
+        return (90 + ANGLE / 2) +SINGLE * num;
     }
 }

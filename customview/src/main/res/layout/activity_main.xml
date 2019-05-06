@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <com.bksx.customview.customview.CaemeraView
+    <com.bksx.customview.customview.MatrixView
         android:id="@+id/cv_test"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
