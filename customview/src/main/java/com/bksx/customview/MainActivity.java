@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.bksx.customview.customview.CaemeraView;
 import com.bksx.customview.customview.TestView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TestView testView;
+    CaemeraView testView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,7 +10,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 
-import com.bumptech.glide.Glide;
 import com.example.artexploration.R;
 import com.squareup.picasso.Picasso;
 

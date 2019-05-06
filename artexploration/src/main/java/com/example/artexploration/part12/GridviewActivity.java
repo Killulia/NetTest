@@ -3,7 +3,6 @@ package com.example.artexploration.part12;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.AbsListView;
 import android.widget.GridView;
 import android.widget.ListView;
@@ -19,6 +18,7 @@ public class GridviewActivity extends AppCompatActivity {
 
     ListView gridView;
     ImageAdapter adapter;
+
     boolean able = false;
 
     @Override
@@ -28,6 +28,7 @@ public class GridviewActivity extends AppCompatActivity {
         gridView = findViewById(R.id.gridview1);
         adapter = new ImageAdapter(ImgUrl.getUrls(), this);
         gridView.setAdapter(adapter);
+
         gridView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -48,6 +49,7 @@ public class GridviewActivity extends AppCompatActivity {
 
             }
         });
+
 
 
     }
