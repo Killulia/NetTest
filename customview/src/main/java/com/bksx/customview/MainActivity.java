@@ -14,7 +14,7 @@ import com.bksx.customview.customview.SportView;
 public class MainActivity extends AppCompatActivity {
 
 
-      CameraView testView;
+      MatrixView testView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -50,15 +50,20 @@ public class MatrixView extends View {
 //        canvas.drawBitmap(bitmap, 0, 0, paint);
 
 
-
 //        Camera变换 坐标原点在中央
-        canvas.translate(getWidth()/2,getHeight()/2);
+//        canvas.translate(getWidth() / 2, getHeight() / 2);
+//        camera.applyToCanvas(canvas);
+//        float x = camera.getLocationX();
+//        float y = camera.getLocationY();
+//        Log.d("tag", "相机位置:" + "x:" + x + ", y:" + y);
+//        canvas.drawBitmap(bitmap, -(IMAGE_WIDTH / 2), -(IMAGE_WIDTH / 2), paint);
+//        canvas.translate(-getWidth() / 2, -getHeight() / 2);
+
+        //Camera变换 坐标原点默认，即hencoder方式
+        canvas.translate(-(300+IMAGE_WIDTH/2),-(100+IMAGE_WIDTH/2));
         camera.applyToCanvas(canvas);
-        float x = camera.getLocationX();
-        float y = camera.getLocationY();
-        Log.d("tag", "相机位置:"+"x:"+x+", y:"+y);
-        canvas.drawBitmap(bitmap, -(IMAGE_WIDTH/2), -(IMAGE_WIDTH/2), paint);
-        canvas.translate(-getWidth()/2,-getHeight()/2);
+        canvas.drawBitmap(bitmap, -(IMAGE_WIDTH / 2), -(IMAGE_WIDTH / 2), paint);
+        canvas.translate(300+IMAGE_WIDTH/2,100+IMAGE_WIDTH/2);
 
 
     }
