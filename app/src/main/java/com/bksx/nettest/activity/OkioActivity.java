@@ -1,11 +1,12 @@
 package com.bksx.nettest.activity;
 
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.bksx.nettest.R;
 import java.io.File;
 import java.io.IOException;
+
+import androidx.appcompat.app.AppCompatActivity;
 import okio.Okio;
 
 public class OkioActivity extends AppCompatActivity {

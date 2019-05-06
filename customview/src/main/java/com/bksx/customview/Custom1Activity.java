@@ -1,7 +1,6 @@
 package com.bksx.customview;
 
 import android.animation.ObjectAnimator;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +15,8 @@ import com.bksx.customview.customview.MyTextView;
 import com.bksx.customview.customview.PieView;
 import com.bksx.customview.customview.TopBar;
 import com.bksx.customview.customview.ValueAnimatorTest;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Custom1Activity extends AppCompatActivity {
 

@@ -15,7 +15,6 @@ import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 
-import static org.greenrobot.greendao.test.DbTest.DB_NAME;
 
 
 

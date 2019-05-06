@@ -1,7 +1,24 @@
-package com.bksx.nettest.fragment;
+/*
+ * Copyright 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.example.android.camera2basic;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -27,7 +44,7 @@ import android.media.ImageReader;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.support.annotation.NonNull;
+
 import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
@@ -53,12 +70,11 @@ import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
-import androidx.core.app.DialogFragment;
-import androidx.core.app.Fragment;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 
 public class Camera2BasicFragment extends Fragment
         implements View.OnClickListener, ActivityCompat.OnRequestPermissionsResultCallback {
@@ -67,7 +83,7 @@ public class Camera2BasicFragment extends Fragment
      * Conversion from screen rotation to JPEG orientation.
      */
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
-    private static final int REQUEST_CAMERA_PERMISSION = 1;
+    private static final int REQUEST_CAMERA_PERMISSION = 101;
     private static final String FRAGMENT_DIALOG = "dialog";
 
     static {
@@ -80,7 +96,7 @@ public class Camera2BasicFragment extends Fragment
     /**
      * Tag for the {@link Log}.
      */
-    private static final String TAG = "Camera2BasicFragment";
+    private static final String TAG = "ccg";
 
     /**
      * Camera state: Showing camera preview.
@@ -343,7 +359,7 @@ public class Camera2BasicFragment extends Fragment
      * @param text The message to show
      */
     private void showToast(final String text) {
-        final AppCompatActivity activity = getActivity();
+        final Activity activity = getActivity();
         if (activity != null) {
             activity.runOnUiThread(new Runnable() {
                 @Override
@@ -435,7 +451,9 @@ public class Camera2BasicFragment extends Fragment
         // available, and "onSurfaceTextureAvailable" will not be called. In that case, we can open
         // a camera and start preview from here (otherwise, we wait until the surface is ready in
         // the SurfaceTextureListener).
+        Log.d(TAG, "7");
         if (mTextureView.isAvailable()) {
+            Log.d(TAG, "6 ");
             openCamera(mTextureView.getWidth(), mTextureView.getHeight());
         } else {
             mTextureView.setSurfaceTextureListener(mSurfaceTextureListener);
@@ -449,10 +467,40 @@ public class Camera2BasicFragment extends Fragment
         super.onPause();
     }
 
+    /**
+     * Opens the camera specified by {@link Camera2BasicFragment#mCameraId}.
+     */
+    private void openCamera(int width, int height) {
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestCameraPermission();
+            Log.d(TAG, "5");
+            return;
+        }
+        Log.d(TAG, "4");
+        setUpCameraOutputs(width, height);
+        configureTransform(width, height);
+        Activity activity = getActivity();
+        CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
+        try {
+            if (!mCameraOpenCloseLock.tryAcquire(2500, TimeUnit.MILLISECONDS)) {
+                throw new RuntimeException("Time out waiting to lock camera opening.");
+            }
+            manager.openCamera(mCameraId, mStateCallback, mBackgroundHandler);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            throw new RuntimeException("Interrupted while trying to lock camera opening.", e);
+        }
+    }
+
+
     private void requestCameraPermission() {
         if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
+            Log.d(TAG, "-1");
             new ConfirmationDialog().show(getChildFragmentManager(), FRAGMENT_DIALOG);
         } else {
+            Log.d(TAG, "0");
             requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
         }
     }
@@ -461,11 +509,14 @@ public class Camera2BasicFragment extends Fragment
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
+            Log.d(TAG, "1");
             if (grantResults.length != 1 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                Log.d(TAG, "2");
                 ErrorDialog.newInstance(getString(R.string.request_permission))
                         .show(getChildFragmentManager(), FRAGMENT_DIALOG);
             }
         } else {
+            Log.d(TAG, "3");
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
@@ -478,7 +529,7 @@ public class Camera2BasicFragment extends Fragment
      */
     @SuppressWarnings("SuspiciousNameCombination")
     private void setUpCameraOutputs(int width, int height) {
-        AppCompatActivity activity = getActivity();
+        Activity activity = getActivity();
         CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
         try {
             for (String cameraId : manager.getCameraIdList()) {
@@ -585,30 +636,6 @@ public class Camera2BasicFragment extends Fragment
         }
     }
 
-    /**
-     * Opens the camera specified by {@link Camera2BasicFragment#mCameraId}.
-     */
-    private void openCamera(int width, int height) {
-        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
-            requestCameraPermission();
-            return;
-        }
-        setUpCameraOutputs(width, height);
-        configureTransform(width, height);
-        AppCompatActivity activity = getActivity();
-        CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
-        try {
-            if (!mCameraOpenCloseLock.tryAcquire(2500, TimeUnit.MILLISECONDS)) {
-                throw new RuntimeException("Time out waiting to lock camera opening.");
-            }
-            manager.openCamera(mCameraId, mStateCallback, mBackgroundHandler);
-        } catch (CameraAccessException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            throw new RuntimeException("Interrupted while trying to lock camera opening.", e);
-        }
-    }
 
     /**
      * Closes the current {@link CameraDevice}.
@@ -727,7 +754,7 @@ public class Camera2BasicFragment extends Fragment
      * @param viewHeight The height of `mTextureView`
      */
     private void configureTransform(int viewWidth, int viewHeight) {
-        AppCompatActivity activity = getActivity();
+        Activity activity = getActivity();
         if (null == mTextureView || null == mPreviewSize || null == activity) {
             return;
         }
@@ -799,7 +826,7 @@ public class Camera2BasicFragment extends Fragment
      */
     private void captureStillPicture() {
         try {
-            final AppCompatActivity activity = getActivity();
+            final Activity activity = getActivity();
             if (null == activity || null == mCameraDevice) {
                 return;
             }
@@ -884,7 +911,7 @@ public class Camera2BasicFragment extends Fragment
                 Activity activity = getActivity();
                 if (null != activity) {
                     new AlertDialog.Builder(activity)
-                            .setMessage(R.string.description_info)
+                            .setMessage(R.string.intro_message)
                             .setPositiveButton(android.R.string.ok, null)
                             .show();
                 }
@@ -976,7 +1003,7 @@ public class Camera2BasicFragment extends Fragment
         @NonNull
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
-            final AppCompatActivity activity = getActivity();
+            final Activity activity = getActivity();
             return new AlertDialog.Builder(activity)
                     .setMessage(getArguments().getString(ARG_MESSAGE))
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
@@ -1000,12 +1027,13 @@ public class Camera2BasicFragment extends Fragment
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             final Fragment parent = getParentFragment();
             return new AlertDialog.Builder(getActivity())
-                    .setMessage(R.string.request_permission)
+                    .setMessage("是否请求权限")
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             parent.requestPermissions(new String[]{Manifest.permission.CAMERA},
                                     REQUEST_CAMERA_PERMISSION);
+//                            Log.d("ccg", "拒绝了权限");
                         }
                     })
                     .setNegativeButton(android.R.string.cancel,

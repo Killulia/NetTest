@@ -1,6 +1,7 @@
 package com.bksx.nettest.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -13,9 +14,13 @@ import com.bksx.nettest.leetcode.Solution;
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 public class LeetActivity extends AppCompatActivity {
 
     int[] nums = {2,4,3,5,1,8,6};
+    private String[] permissions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +31,7 @@ public class LeetActivity extends AppCompatActivity {
 //        Log.d("ccg", "result:" + result);
         Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
         Effection.binarySerach(nums,6);
+        checkPermissions();
 
 
     }
@@ -46,5 +52,26 @@ public class LeetActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void checkPermissions() {
+        permissions = new String[]{
+                Manifest.permission.INTERNET,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA,
+                Manifest.permission.READ_SMS,
+                Manifest.permission.INSTALL_SHORTCUT,
+                Manifest.permission.MODIFY_AUDIO_SETTINGS
+
+        };
+
+        for (String permission : permissions) {
+            int isGranted = ContextCompat.checkSelfPermission(this,permission);
+            if (isGranted == PackageManager.PERMISSION_GRANTED){
+                Log.d("ccg", permission+ "已授权");
+            }else if (isGranted== PackageManager.PERMISSION_DENIED){
+                Log.d("ccg", permission+ "未授权");
+            }
+        }
     }
 }

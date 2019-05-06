@@ -8,7 +8,6 @@ import com.bksx.nettest.BaseApplication;
 import com.bksx.nettest.gen.DaoMaster;
 import com.bksx.nettest.gen.DaoSession;
 
-import static org.greenrobot.greendao.test.DbTest.DB_NAME;
 
 
 public class DbManager {

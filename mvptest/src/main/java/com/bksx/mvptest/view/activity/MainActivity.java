@@ -3,7 +3,6 @@ package com.bksx.mvptest.view.activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,6 +13,8 @@ import com.bksx.mvptest.util.Constans;
 import com.bksx.mvptest.view.interfaces.MainView;
 import java.io.File;
 import java.io.IOException;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,MainView {
 
