@@ -23,4 +23,7 @@ public class Utils {
         return BitmapFactory.decodeResource(res, R.drawable.hencoder, options);
     }
 
+    public static float getZFromCamera(float z,Resources resources) {
+        return z * resources.getDisplayMetrics().density;
+    }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Camera;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -15,7 +16,7 @@ import androidx.annotation.Nullable;
 
 public class MatrixView extends View {
 
-    private static final int IMAGE_WIDTH = (int) Utils.dp2px(150);
+    private static final int IMAGE_WIDTH = (int) Utils.dp2px(200);
     private static final int IMAGE_PADDING = (int) Utils.dp2px(80);
 
     Bitmap bitmap;
@@ -29,12 +30,15 @@ public class MatrixView extends View {
     {
 
         bitmap = Utils.getHeadImg(getResources(), IMAGE_WIDTH);
-        camera.rotateX(30);
+        camera.rotateX(45);
+        camera.setLocation(0,0,Utils.getZFromCamera(-10,getResources()));
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+//        canvas.drawBitmap(bitmap,getWidth()/2-IMAGE_WIDTH/2,getHeight()/2-IMAGE_WIDTH/2,paint);
 
 
 //        Camera变换 坐标原点在中央
