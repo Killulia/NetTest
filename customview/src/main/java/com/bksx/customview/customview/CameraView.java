@@ -41,29 +41,20 @@ public class CameraView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-//        camera.save();
-//        matrix.reset();
-//        camera.rotateX(30);
-//        camera.getMatrix(matrix);
-//        camera.restore();
-//        matrix.preTranslate(-(200 + width), -(0 + height));
-//        matrix.postTranslate(200 + width, 0 + height);
-//
-//        canvas.save();
-//        canvas.concat(matrix);
-//        canvas.drawBitmap(bitmap, 200, 0, paint);
-//        canvas.restore();
-/////////////////////////////////////////
-        canvas.save();
         camera.save();
-        camera.rotateX(-10);
-
-
-        camera.applyToCanvas(canvas);
+        matrix.reset();
+        camera.rotateX(30);
+        camera.getMatrix(matrix);
         camera.restore();
+        matrix.preTranslate(-(200 + width), -(0 + height));
+        matrix.postTranslate(200 + width, 0 + height);
 
-        canvas.drawBitmap(bitmap, point1.x, point1.y, paint);
+        canvas.save();
+        canvas.concat(matrix);
+        canvas.drawBitmap(bitmap, 200, 0, paint);
         canvas.restore();
+
+
     }
 
 

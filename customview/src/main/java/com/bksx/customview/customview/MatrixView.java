@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Camera;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -15,7 +16,7 @@ import androidx.annotation.Nullable;
 
 public class MatrixView extends View {
 
-    private static final int IMAGE_WIDTH = (int) Utils.dp2px(70);
+    private static final int IMAGE_WIDTH = (int) Utils.dp2px(150);
     private static final int IMAGE_PADDING = (int) Utils.dp2px(80);
 
     Bitmap bitmap;
@@ -51,7 +52,13 @@ public class MatrixView extends View {
 
 
 //        Camera变换 坐标原点在中央
-        canvas.translate(getWidth() , getHeight() / 2);
+        Matrix matrix = new Matrix();
+        camera.getMatrix(matrix);
+        Log.d("ccg", "相机矩阵1： "+matrix.toString());
+        canvas.translate(getWidth() / 2 , getHeight() / 2);
+        Matrix matrix2 = new Matrix();
+        camera.getMatrix(matrix2);
+        Log.d("ccg", "相机矩阵2： "+matrix2.toString());
         camera.applyToCanvas(canvas);
         //canvas大小与view的大小一致或者说canvas无边界，最终的大小就是留在View范围内裁去多余的部分
         float w = canvas.getWidth();
