@@ -5,9 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <com.bksx.customview.customview.MatrixTestView
+    <com.bksx.customview.customview.MatrixView
         android:id="@+id/cv_test"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_animaition"-->
+        <!--android:layout_width="70dp"-->
+        <!--android:layout_height="70dp"-->
+        <!--android:src="@drawable/hencoder"-->
+        <!--android:visibility="gone"-->
+        <!--/>-->
 </RelativeLayout>

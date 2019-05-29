@@ -7,21 +7,32 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.bksx.customview.Utils;
+
 public class CircleView extends View {
 
     private Paint mPaint;
     private Context mContext;// 上下文环境引用
+    private float radius = Utils.dp2px(50);
 
-    private int radiu;// 圆环半径
 
     public CircleView(Context context) {
         super(context);
         initPaint();
     }
 
-    private void initPaint() {
-        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    public float getRadius() {
+        return radius;
+    }
 
+    public void setRadius(float radius) {
+        this.radius = radius;
+        invalidate();
+    }
+
+    private void initPaint() {
+
+        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
         mPaint.setStrokeWidth(10);
 
@@ -40,7 +51,7 @@ public class CircleView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.drawCircle(300,300,200,mPaint);
+        canvas.drawCircle(getWidth()/2,getHeight()/2,radius,mPaint);
     }
 
 //    @Override
