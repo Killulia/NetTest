@@ -10,15 +10,17 @@ import android.widget.ImageView;
 
 import com.bksx.customview.customview.CameraView;
 import com.bksx.customview.customview.CircleView;
+import com.bksx.customview.customview.ClipBitmapView;
 import com.bksx.customview.customview.ImageTestView;
 import com.bksx.customview.customview.MatrixTestView;
 import com.bksx.customview.customview.MatrixView;
+import com.bksx.customview.customview.RadarView;
 import com.bksx.customview.customview.SportView;
 
 public class MainActivity extends AppCompatActivity {
 
 
-      MatrixView testView;
+      RadarView testView;
       ImageView ivAnimation;
 
     @Override

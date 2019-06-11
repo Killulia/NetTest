@@ -50,12 +50,7 @@ public class MatrixView extends View {
         //绕view中心做旋转变换，再在这个变换的canvas上画bitmap得到的就是想要的效果。plan A同理，二者实际效果相同
         camera.applyToCanvas(canvas);
         //canvas大小与view的大小一致或者说canvas无边界，最终的大小就是留在View范围内裁去多余的部分
-        float w = canvas.getWidth();
-        float h = canvas.getHeight();
-        float vw = getWidth();
-        float vh = getHeight();
-        Log.d("ccg", "canvas大小：" + w + "," + h);
-        Log.d("ccg", "view大小：" + vw + "," + vh);
+
 
         //plan A 这种是完成旋转后提前把原点移回去，所以画bitmap时为了让他在原来的位置，坐标用移回去的坐标系体系下的
 //        canvas.translate(-(getWidth() / 2), -(getHeight() / 2));
