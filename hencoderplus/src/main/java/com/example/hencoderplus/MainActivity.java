@@ -7,14 +7,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import com.example.hencoderplus.recyclerview.DemoAdapter;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
-
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -53,12 +51,11 @@ public class MainActivity extends Activity {
                 e.printStackTrace();
             }
         }
-        Log.d("ccg", "io2");
+
         try {
             FileWriter writer = new FileWriter(file);
             writer.write("abc");
             writer.flush();
-            Log.d("ccg", "io3");
         } catch (IOException e) {
             Log.d("ccg", "异常："+e.getMessage());
             e.printStackTrace();
