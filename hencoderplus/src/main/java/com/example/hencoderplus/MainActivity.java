@@ -1,10 +1,12 @@
 package com.example.hencoderplus;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 import com.example.hencoderplus.recyclerview.DemoAdapter;
 import java.io.File;
@@ -29,6 +31,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        drawBadge();
+        Utils.drawBadge(this);
         //part-recyclerview
         rvTest = findViewById(R.id.rv_test);
         rvTest.setLayoutManager(new LinearLayoutManager(this));
@@ -62,4 +66,6 @@ public class MainActivity extends Activity {
         }
 
     }
+
+
 }
