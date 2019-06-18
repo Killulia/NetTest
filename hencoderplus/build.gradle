@@ -11,15 +11,30 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
     buildTypes {
+
+
+
+        debug {
+            minifyEnabled false
+            applicationIdSuffix ".debug"
+        }
+
+        funny.initWith(buildTypes.debug)
+        funny {
+            minifyEnabled false
+            applicationIdSuffix ".funny"
+        }
+
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".release"
         }
     }
 

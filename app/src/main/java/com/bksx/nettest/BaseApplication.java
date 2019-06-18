@@ -10,7 +10,6 @@ import com.bksx.nettest.db.Helper;
 import com.bksx.nettest.gen.DaoMaster;
 import com.bksx.nettest.gen.DaoSession;
 import com.bksx.nettest.utils.MigrationHelper;
-import com.mob.MobSDK;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
@@ -23,7 +22,7 @@ public class BaseApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
-        MobSDK.init(this);
+//        MobSDK.init(this);
         initGreenDao();
         UMShareAPI.get(this);//初始化sdk
         UMConfigure.init(this,"5badc945f1f55634ef000184","Umeng", UMConfigure.DEVICE_TYPE_PHONE,"");
