@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
         });
         rvTest.setAdapter(adapter);
 
-        //io
+        //part-io
         File file = new File(path);
         if (!file.exists()) {
             Log.d("ccg", "io1");
@@ -53,14 +53,21 @@ public class MainActivity extends Activity {
                 e.printStackTrace();
             }
         }
-        Log.d("ccg", "io2");
         try {
             FileWriter writer = new FileWriter(file);
             writer.write("abc");
             writer.flush();
-            Log.d("ccg", "io3");
         } catch (IOException e) {
             Log.d("ccg", "异常："+e.getMessage());
+            e.printStackTrace();
+        }
+        //java7支持,实现了Closeable的可以这么写
+        try (OutputStream outputStream = new FileOutputStream(file)){
+            outputStream.write('k');
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
