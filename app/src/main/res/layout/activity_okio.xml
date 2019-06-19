@@ -133,7 +133,6 @@
         />
 
     <Button
-        android:id="@+id/button30"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
