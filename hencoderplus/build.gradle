@@ -52,6 +52,25 @@ android {
             applicationIdSuffix ".release"
         }
     }
+    flavorDimensions 'price', 'range'
+    productFlavors {
+        free {
+            dimension = 'price'
+            applicationIdSuffix = '.free'
+        }
+        vip {
+            dimension = 'price'
+            applicationIdSuffix = '.vip'
+        }
+        China {
+            dimension = 'range'
+            applicationIdSuffix = '.china'
+        }
+        Global {
+            dimension = 'range'
+            applicationIdSuffix = '.global'
+        }
+    }
 
 }
 
