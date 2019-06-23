@@ -7,9 +7,5 @@ import android.view.ViewGroup;
 
 public class Utils {
     public static void drawBadge(Activity activity) {
-        ViewGroup decorView = (ViewGroup) activity. getWindow().getDecorView();
-        View badge = new View(activity);
-        badge.setBackgroundColor(Color.GREEN);
-        decorView.addView(badge,200,100);
     }
 }
