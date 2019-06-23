@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.hencoderplus.MainActivity;
 import com.example.hencoderplus.R;
 
 import java.util.ArrayList;

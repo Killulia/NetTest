@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
-apply plugin: 'com.mob.sdk'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -20,6 +19,7 @@ android {
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
+
     }
 }
 
@@ -31,12 +31,7 @@ greendao {
     //generateTests：设置自动生成单元测试用例
 }
 
-// 在MobSDK的扩展中注册MobAPI的相关信息
-MobSDK {
-    appKey "28066eee31e3e"
-    appSecret "d3568caa05f30003cc989dbda603a7c0"
-    MobAPI {}
-}
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')

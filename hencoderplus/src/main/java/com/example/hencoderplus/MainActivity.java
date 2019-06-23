@@ -1,20 +1,20 @@
 package com.example.hencoderplus;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 import com.example.hencoderplus.recyclerview.DemoAdapter;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
-
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,6 +31,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        drawBadge();
+        Utils.drawBadge(this);
         //part-recyclerview
         rvTest = findViewById(R.id.rv_test);
         rvTest.setLayoutManager(new LinearLayoutManager(this));
@@ -43,7 +45,7 @@ public class MainActivity extends Activity {
         });
         rvTest.setAdapter(adapter);
 
-        //part-io
+        //io
         File file = new File(path);
         if (!file.exists()) {
             Log.d("ccg", "io1");
@@ -53,6 +55,7 @@ public class MainActivity extends Activity {
                 e.printStackTrace();
             }
         }
+
         try {
             FileWriter writer = new FileWriter(file);
             writer.write("abc");
@@ -61,15 +64,8 @@ public class MainActivity extends Activity {
             Log.d("ccg", "异常："+e.getMessage());
             e.printStackTrace();
         }
-        //java7支持,实现了Closeable的可以这么写
-        try (OutputStream outputStream = new FileOutputStream(file)){
-            outputStream.write('k');
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
+
+
 }
