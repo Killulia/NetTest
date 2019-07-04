@@ -11,12 +11,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
 
     RecyclerView rvTest;
@@ -26,25 +27,34 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-//        drawBadge();
-        //part-gradle
+        //part-constraintlyout
+        setContentView(R.layout.constraint_test);
+//        buildTypeTest();
+        //part-recyclerview
+//        rvTest = findViewById(R.id.rv_test);
+//        rvTest.setLayoutManager(new LinearLayoutManager(this));
+//        rvTest.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+//        adapter.setOnItemClickListner(new DemoAdapter.OnItemClickListner() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                Toast.makeText(MainActivity.this,position+"",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        rvTest.setAdapter(adapter);
+
+
+    }
+
+    //part-gradle
+    private void buildTypeTest() {
         PriceUtils.display();
         RangeUtils.display();
         Utils.drawBadge(this);
-        //part-recyclerview
-        rvTest = findViewById(R.id.rv_test);
-        rvTest.setLayoutManager(new LinearLayoutManager(this));
-        rvTest.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-        adapter.setOnItemClickListner(new DemoAdapter.OnItemClickListner() {
-            @Override
-            public void onItemClick(View view, int position) {
-                Toast.makeText(MainActivity.this,position+"",Toast.LENGTH_SHORT).show();
-            }
-        });
-        rvTest.setAdapter(adapter);
+    }
 
-        //io
+    //part-io
+    private void ioTest() {
+
         File file = new File(path);
         if (!file.exists()) {
             Log.d("ccg", "io1");
@@ -63,7 +73,6 @@ public class MainActivity extends Activity {
             Log.d("ccg", "异常："+e.getMessage());
             e.printStackTrace();
         }
-
     }
 
 

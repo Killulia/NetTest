@@ -42,7 +42,7 @@ public class NetActivity extends AppCompatActivity {
     private String[] permissions;
 
     //    retrofit2.Call<List<DataBean>> call;
-//    retrofit2.Call<ToutiaoBean> call;
+    retrofit2.Call<ToutiaoBean> call;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
