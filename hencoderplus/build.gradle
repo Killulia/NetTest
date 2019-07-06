@@ -2,14 +2,23 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        config {
-            keyPassword '123456'
-            storeFile file('C:/Users/63170/Desktop/hecoderplus_releasekey/henrelease.jks')
+        release {
+            storeFile file('C:\\Users\\try\\Desktop\\henrelease\\release.jks')
             storePassword '123456'
-            keyAlias 'key0'
+            keyAlias = 'key0'
+            keyPassword '123456'
+        }
+        funny {
+            storeFile file('C:\\Users\\try\\Desktop\\henrelease\\funny.jks')
+            storePassword '123456'
+            keyAlias = 'key1'
+            keyPassword '123456'
         }
     }
     compileSdkVersion 28
+
+
+
     defaultConfig {
         applicationId "com.example.hencoderplus"
         minSdkVersion 21
@@ -17,24 +26,49 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
+        signingConfig signingConfigs.release
 
     }
+
     buildTypes {
+
+
+
         debug {
             minifyEnabled false
             applicationIdSuffix ".debug"
         }
-        funny.initWith(buildTypes.debug)
+
+//        funny.initWith(buildTypes.debug)
         funny {
             minifyEnabled false
             applicationIdSuffix ".funny"
         }
+
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             applicationIdSuffix ".release"
-            signingConfig signingConfigs.config
+        }
+    }
+    flavorDimensions 'price', 'range'
+    productFlavors {
+        free {
+            dimension = 'price'
+            applicationIdSuffix = '.free'
+        }
+        vip {
+            dimension = 'price'
+            applicationIdSuffix = '.vip'
+        }
+        China {
+            dimension = 'range'
+            applicationIdSuffix = '.china'
+        }
+        Global {
+            dimension = 'range'
+            applicationIdSuffix = '.global'
         }
     }
 

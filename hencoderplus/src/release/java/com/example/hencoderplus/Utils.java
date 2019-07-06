@@ -7,5 +7,6 @@ import android.view.ViewGroup;
 
 public class Utils {
     public static void drawBadge(Activity activity) {
+
     }
 }
