@@ -92,6 +92,12 @@ public class DemoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
         }
     }
 
+    public void insertOne(){
+        User user = new User("new");
+        list.add(user);
+        notifyItemInserted(list.size());
+    }
+
     static class ListHolder extends RecyclerView.ViewHolder{
 
         TextView tvName;

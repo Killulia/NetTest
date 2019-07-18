@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HencoderPlus</string>
+    <string name="constraint_test">我们有三个TextViews： 左边 textView1 和 textView2 ，右边 textView3。textView3 约束在 textView1 的右边，效果也符合我们的预期。  但是当需要支持多语言的时候事情就变得复杂了。如果我们添加德语就出现了问题，因为在英语里面textView1的文字是长于textView2的，但是在德语中却是textView2的文字比textView1长：</string>
 </resources>
