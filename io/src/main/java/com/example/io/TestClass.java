@@ -15,7 +15,7 @@ public class TestClass {
         okioCopy();
     }
 
-    private static void okio1(){
+    public static void okio1(){
         try (Source source = Okio.source(new File("E:\\test.txt"))){
             Buffer buffer = new Buffer();
             source.read(buffer, 1024);
@@ -27,7 +27,7 @@ public class TestClass {
         }
     }
 
-    private static void okioCopy(){
+    public static void okioCopy(){
         File file = new File("E:\\okio.txt");
         File file2 = new File("E:\\copy.txt");
         try (BufferedSink sink = Okio.buffer(Okio.sink(file2))){

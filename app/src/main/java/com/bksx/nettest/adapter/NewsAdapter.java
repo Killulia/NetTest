@@ -34,7 +34,7 @@ public class NewsAdapter extends BaseAdapterHelper<NewsBean.ResultBean.DataBean>
         }
 
         viewHolder.title.setText(list.get(position).getTitle());
-        Picasso.with(context).load(list.get(position).getThumbnail_pic_s()).into(viewHolder.header);
+        Picasso.get().load(list.get(position).getThumbnail_pic_s()).into(viewHolder.header);
         return convertView;
     }
 
