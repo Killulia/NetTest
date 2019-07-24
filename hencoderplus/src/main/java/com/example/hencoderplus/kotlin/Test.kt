@@ -1,9 +1,13 @@
 package com.example.hencoderplus.kotlin
+
+import com.example.hencoderplus.recyclerview.User
+
 fun main(){
-    println(test(3))
+    val b: String? = null
+    var a: String = ""
+    val aInt: Int? = a as? Int
+
+    println(aInt)
 }
 
-fun test(a:Int):String{
-    return a.toString()
-}
 
