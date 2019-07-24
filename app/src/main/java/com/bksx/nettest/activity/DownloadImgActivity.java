@@ -92,7 +92,7 @@ public class DownloadImgActivity extends AppCompatActivity implements View.OnCli
                     public void run() {
                         Log.d("asd", "finish");
                         progressBar.setVisibility(View.GONE);
-                        Picasso.with(context).load(file).into(img);
+                        Picasso.get().load(file).into(img);
                     }
                 });
 
@@ -165,7 +165,7 @@ public class DownloadImgActivity extends AppCompatActivity implements View.OnCli
         file = new File(imgPath);
         if (file.exists()) {
             //本地已有，直接显示
-            Picasso.with(context).load(file).into(img);
+            Picasso.get().load(file).into(img);
         } else {
             Log.d("ccg", "file not exists");
             try {
