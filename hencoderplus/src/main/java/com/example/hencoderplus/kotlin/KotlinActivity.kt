@@ -2,13 +2,13 @@ package com.example.hencoderplus.kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import com.example.hencoderplus.R
+import com.example.hencoderplus.temp.CodeView
 
-class KotlinActivity : AppCompatActivity() , View.OnClickListener {
+class KotlinActivity : AppCompatActivity(), View.OnClickListener {
 
 
     private val username:String = "username"
@@ -16,7 +16,7 @@ class KotlinActivity : AppCompatActivity() , View.OnClickListener {
     private lateinit var etName: EditText
     private lateinit var etPassword:EditText
     private lateinit var btLogin: Button
-    private lateinit var cvTest:CodeView
+    private lateinit var cvTest: CodeView
     var test: String = ""
     lateinit var semi:String
 
@@ -28,10 +28,13 @@ class KotlinActivity : AppCompatActivity() , View.OnClickListener {
         etPassword = findViewById(R.id.et_password)
         btLogin = findViewById(R.id.bt_login)
         cvTest = findViewById(R.id.cv_msg)
-        etName.setText("tmac")
-
         btLogin.setOnClickListener(this)
         cvTest.setOnClickListener(this)
+
+
+
+
+
 
 
     }
@@ -49,3 +52,6 @@ class KotlinActivity : AppCompatActivity() , View.OnClickListener {
     }
 
 }
+
+
+

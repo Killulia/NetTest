@@ -1,7 +1,6 @@
-package com.example.hencoderplus.kotlin;
+package com.example.hencoderplus.temp;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
