@@ -1,26 +1,27 @@
-package com.example.hencoderplus.kotlin;
+package com.example.hencoderplus.temp;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.view.View;
-import android.widget.TextView;
-
+import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.example.hencoderplus.R;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class CodeView extends AppCompatTextView {
 
     private Paint paint;
-    public  final String T1 = "FLASH";
-    public  final String T2 = "SONIC";
+    private  final String T1 = "FLASH";
+    private  final String T2 = "SONIC";
+    private  final String T3 = "FLAME";
+    private  final String T4 = "STORM";
+    private  final String T5 = "THUNDER";
+    private int temp = 0;
+    private int index = 0;
     private List<String> list = new ArrayList<>();
 
 
@@ -32,11 +33,14 @@ public class CodeView extends AppCompatTextView {
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(getResources().getColor(R.color.colorAccent));
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(20);
+        paint.setStrokeWidth(13);
         paint.setStrokeCap(Paint.Cap.ROUND);
 
         list.add(T1);
         list.add(T2);
+        list.add(T3);
+        list.add(T4);
+        list.add(T5);
     }
 
     @Override
@@ -45,9 +49,17 @@ public class CodeView extends AppCompatTextView {
         canvas.drawLine(0,0,getWidth(),getHeight(),paint);
     }
 
-    private void updateCode(){
-        int index = (int) (Math.random() * list.size());
-        setText(list.get(index));
+    public void updateCode(){
+        int index;
+        while (true){
+            index = (int) (Math.random() * list.size());
+            if (temp != index)
+                break;
+        }
+        temp = index;
+        String text = list.get(index);
+        Log.d("tag", "text: "+text);
+        setText(text);
         postInvalidate();
     }
 }
