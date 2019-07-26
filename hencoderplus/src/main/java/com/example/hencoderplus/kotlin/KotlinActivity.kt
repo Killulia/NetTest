@@ -6,9 +6,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import com.example.hencoderplus.R
-import com.example.hencoderplus.temp.CodeView
 
-class KotlinActivity : AppCompatActivity() , View.OnClickListener {
+class KotlinActivity : AppCompatActivity(), View.OnClickListener {
 
 
     private val username:String = "username"

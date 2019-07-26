@@ -37,7 +37,7 @@ class CodeView : AppCompatTextView {
         canvas?.drawLine(0F, 0F, width.toFloat(), height.toFloat(), paint)
     }
 
-    fun upadateCode() {
+    fun updateCode() {
         var index: Int
         while (true) {
             index = (Math.random() * list.size).toInt()
