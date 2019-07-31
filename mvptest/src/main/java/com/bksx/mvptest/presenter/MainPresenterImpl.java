@@ -27,4 +27,5 @@ public class MainPresenterImpl implements MainPresenter {
     public void showImg(Bitmap bitmap) {
         view.showImg(bitmap);
     }
+
 }

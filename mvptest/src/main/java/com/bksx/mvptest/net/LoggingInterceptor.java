@@ -3,14 +3,12 @@ package com.bksx.mvptest.net;
 import android.util.Log;
 
 import java.io.IOException;
-
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 public class LoggingInterceptor implements Interceptor {
-    private final int byteCount = 1024*1024;
 
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -21,6 +19,7 @@ public class LoggingInterceptor implements Interceptor {
 //        LogUtils.d(String.format("发送请求  %s",request.url()));
         Log.d("tmac",String.format("发送请求  %s",request.url()));
 
+        int byteCount = 1024 * 1024;
         ResponseBody responseBody = response.peekBody(byteCount);
 
 //        LogUtils.d(String.format("接收响应  %s", responseBody.string()));

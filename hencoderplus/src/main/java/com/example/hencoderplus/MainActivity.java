@@ -3,6 +3,7 @@ package com.example.hencoderplus;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.hencoderplus.kotlin.Utils;
 
 
 public class MainActivity extends AppCompatActivity {

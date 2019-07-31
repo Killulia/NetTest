@@ -2,9 +2,7 @@ package com.example.hencoderplus.io;
 
 import android.os.Environment;
 import android.util.Log;
-
 import com.example.io.TestClass;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

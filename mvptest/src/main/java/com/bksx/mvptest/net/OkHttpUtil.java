@@ -35,10 +35,9 @@ public class OkHttpUtil {
     }
 
     private static Request getRequest(String url){
-        Request request = new Request.Builder()
+        return new Request.Builder()
                 .url(url)
                 .build();
-        return request;
     }
 
     private static Response getResponse(String url) throws IOException {
@@ -54,11 +53,10 @@ public class OkHttpUtil {
     }
 
     private static Request getPostRequest(String url, RequestBody requestBody){
-        Request request = new Request.Builder()
+        return new Request.Builder()
                 .url(url)
                 .post(requestBody)
                 .build();
-        return request;
     }
 
     private static RequestBody getFormRequestBody(Map<String,String> formMap){

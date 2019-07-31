@@ -1,1 +1,1 @@
-include ':app', ':progress', ':customview', ':mvptest', ':framework', ':sdkdemo', ':artexploration', ':kotlin', ':hencoderplus', ':io'
+include ':app', ':progress', ':customview', ':mvptest', ':framework', ':sdkdemo', ':artexploration', ':kotlin', ':hencoderplus', ':io', ':mvpcheck', ':mvpcheck', ':loginmvp'

@@ -9,15 +9,10 @@ import com.example.hencoderplus.R
 
 class KotlinActivity : AppCompatActivity(), View.OnClickListener {
 
-
-    private val username:String = "username"
-    private val password:String = "password"
     private lateinit var etName: EditText
     private lateinit var etPassword:EditText
     private lateinit var btLogin: Button
     private lateinit var cvTest: CodeView
-    var test: String = ""
-    lateinit var semi:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,8 +26,6 @@ class KotlinActivity : AppCompatActivity(), View.OnClickListener {
         cvTest.setOnClickListener(this)
 
 
-
-
     }
 
     override fun onClick(v: View?) {
@@ -40,6 +33,7 @@ class KotlinActivity : AppCompatActivity(), View.OnClickListener {
             login()
         }else if (v is CodeView){
             v.updateCode()
+            Utils.toast("验证")
         }
     }
 

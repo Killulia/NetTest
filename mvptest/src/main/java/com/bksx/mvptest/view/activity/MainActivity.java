@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();
         mainPresenter = new MainPresenterImpl(this);
 
-
     }
 
     private void initView() {
