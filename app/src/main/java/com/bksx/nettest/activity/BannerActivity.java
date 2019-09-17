@@ -13,20 +13,16 @@ import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.bksx.nettest.R;
-import com.bksx.nettest.testclass.DraggerA;
-import com.bksx.nettest.testclass.DraggerB;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class BannerActivity extends AppCompatActivity {
-    @Inject
-    DraggerA draggerA;
+
     private Context context = this;
     private List<Integer> imageList = new ArrayList<>();
 

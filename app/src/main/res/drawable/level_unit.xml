@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--方-->
+    <item
+        android:minLevel="1"
+        android:maxLevel="1"
+        >
+        <shape
+            android:shape="rectangle">
+            <padding
+                android:bottom="0dp"
+                android:left="0dp"
+                android:right="0dp"
+                android:top="0dp" />
+            <size
+                android:width="12dp"
+                android:height="12dp" />
+            <solid android:color="#ADBCFD" />
+
+        </shape>
+    </item>
+    <item
+        android:minLevel="2"
+        android:maxLevel="2"
+        >
+        <shape
+            android:shape="rectangle">
+            <padding
+                android:bottom="0dp"
+                android:left="0dp"
+                android:right="0dp"
+                android:top="0dp" />
+            <size
+                android:width="12dp"
+                android:height="12dp" />
+            <solid android:color="#F9A139" />
+
+        </shape>
+    </item>
+    <item
+        android:minLevel="3"
+        android:maxLevel="3"
+        >
+        <shape
+            android:shape="rectangle">
+            <padding
+                android:bottom="0dp"
+                android:left="0dp"
+                android:right="0dp"
+                android:top="0dp" />
+            <size
+                android:width="12dp"
+                android:height="12dp" />
+            <solid android:color="#FFFFFF" />
+
+        </shape>
+    </item>
+    <item
+        android:minLevel="4"
+        android:maxLevel="4"
+        >
+        <shape
+            android:shape="rectangle">
+            <padding
+                android:bottom="0dp"
+                android:left="0dp"
+                android:right="0dp"
+                android:top="0dp" />
+            <size
+                android:width="12dp"
+                android:height="12dp" />
+            <solid android:color="#48BDEE" />
+
+        </shape>
+    </item>
+
+    <!--圆-->
+    <item
+        android:minLevel="5"
+        android:maxLevel="5"
+        >
+        <shape
+            android:shape="oval">
+            <padding
+                android:bottom="0dp"
+                android:left="0dp"
+                android:right="0dp"
+                android:top="0dp" />
+            <size
+                android:width="12dp"
+                android:height="12dp" />
+            <solid android:color="#15AB31" />
+
+        </shape>
+    </item>
+    <item
+        android:minLevel="6"
+        android:maxLevel="6"
+        >
+        <shape
+            android:shape="oval">
+            <padding
+                android:bottom="0dp"
+                android:left="0dp"
+                android:right="0dp"
+                android:top="0dp" />
+            <size
+                android:width="12dp"
+                android:height="12dp" />
+            <solid android:color="#EAE827" />
+
+        </shape>
+    </item>
+    <item
+        android:minLevel="7"
+        android:maxLevel="7"
+        >
+        <shape
+            android:shape="oval">
+            <padding
+                android:bottom="0dp"
+                android:left="0dp"
+                android:right="0dp"
+                android:top="0dp" />
+            <size
+                android:width="12dp"
+                android:height="12dp" />
+            <solid android:color="#F2664F" />
+
+        </shape>
+    </item>
+</level-list>

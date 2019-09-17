@@ -15,11 +15,11 @@ public class Camera2AndPermissionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera2);
-        if (null == savedInstanceState) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, PermissionFragment.newInstance())
-                    .commit();
-        }
+//        if (null == savedInstanceState) {
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.container, PermissionFragment.newInstance())
+//                    .commit();
+//        }
 
     }
 }

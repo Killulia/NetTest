@@ -1,14 +1,11 @@
 package com.example.framework.mainpage;
 
 import android.os.Bundle;
-import android.util.Log;
-
 import com.example.framework.BaseMvpActivity;
 import com.example.framework.LogUtils;
 import com.example.framework.R;
 import com.example.framework.bean.DataBean;
 import com.example.framework.bean.ToutiaoBean;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +31,6 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
 
     @Override
     public void getNewsData(ToutiaoBean<DataBean> toutiaoBeanBaseModel) {
-        Log.d("ccg", "回调");
         for (DataBean datum : toutiaoBeanBaseModel.getResult().getData()) {
             LogUtils.d("标题:"+datum.getTitle());
         }

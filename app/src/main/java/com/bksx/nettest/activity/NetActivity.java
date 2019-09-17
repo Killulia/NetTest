@@ -99,10 +99,11 @@ public class NetActivity extends AppCompatActivity {
         //retrofit表单请求 身份证和归属地
         retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.ID_BASE_URL)
-                .client(OkHttpUtil.getOkHttpSingletonInstance())
+                .client(OkHttpUtil.getOkHttpSingletonInstance())//使用自己的单例okhttpclient,否则默认会new新的实例
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
+
 
 
         apiService = retrofit.create(ApiService.class);

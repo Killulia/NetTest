@@ -1,23 +1,25 @@
 package com.example.kotlin
 
-import android.net.Credentials
-import android.net.wifi.hotspot2.pps.Credential
+
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var tvTest:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var x = 5
         x += 3
-        Log.d("ccg","asd")
         Toast.makeText(this,"sury",Toast.LENGTH_SHORT).show()
-        test()
+        tvTest = findViewById(R.id.tv_test)
+        check(tvTest)
     }
 
     private fun test() {
@@ -29,6 +31,11 @@ class MainActivity : AppCompatActivity() {
         Log.d("ccg",s2)
 
     }
+
+    fun check(view : View?){
+        Log.d("ccg", view?.id.toString())
+    }
+
 
 
 

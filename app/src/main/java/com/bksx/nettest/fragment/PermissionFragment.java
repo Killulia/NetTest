@@ -1,28 +1,27 @@
 package com.bksx.nettest.fragment;
 
 import android.Manifest;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import permissions.dispatcher.NeedsPermission;
-import permissions.dispatcher.OnNeverAskAgain;
-import permissions.dispatcher.OnPermissionDenied;
-import permissions.dispatcher.RuntimePermissions;
-//import androidx.core.content.ContextCompat;
-//import androidx.fragment.app.DialogFragment;
-//import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.bksx.nettest.BuildConfig;
 import com.bksx.nettest.R;
+
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.OnNeverAskAgain;
+import permissions.dispatcher.OnPermissionDenied;
+import permissions.dispatcher.OnShowRationale;
+import permissions.dispatcher.PermissionRequest;
+import permissions.dispatcher.RuntimePermissions;
 
 @RuntimePermissions
 public class PermissionFragment extends Fragment implements View.OnClickListener {
@@ -64,7 +63,7 @@ public class PermissionFragment extends Fragment implements View.OnClickListener
     }
 
 
-    private void show(String str) {
+     void show(String str) {
         Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
     }
 
@@ -176,12 +175,11 @@ public class PermissionFragment extends Fragment implements View.OnClickListener
     }
 
 
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        PermissionFragmentPermissionsDispatcher.onRequestPermissionsResult(this,requestCode,grantResults);
-    }
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        PermissionFragmentPermissionsDispatcher.onRequestPermissionsResult(this,requestCode,grantResults);
+//    }
 
 
     @NeedsPermission(Manifest.permission.CAMERA)
@@ -202,6 +200,8 @@ public class PermissionFragment extends Fragment implements View.OnClickListener
     void doDenied() {
         Log.d("ccg", "拒绝");
     }
+
+
 
 
 }

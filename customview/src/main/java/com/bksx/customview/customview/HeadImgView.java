@@ -76,4 +76,5 @@ public class HeadImgView extends View {
         options.inTargetDensity = width;
         return BitmapFactory.decodeResource(getResources(), R.drawable.fultz, options);
     }
+
 }
