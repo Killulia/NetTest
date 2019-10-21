@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 
 
@@ -26,15 +25,15 @@ public class MyViewGroup extends RelativeLayout {
         return super.dispatchTouchEvent(ev);
     }
 
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        Log.d("ccg", "onInterceptTouchEvent-"+ev.getAction());
-        return true;
-    }
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        Log.d("ccg", "onInterceptTouchEvent-"+ev.getAction());
+//        return true;
+//    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.d("ccg", "onTouchEvent/ViewGroup-"+event.getAction());
-        return super.onTouchEvent(event);
+        return true;
     }
 }

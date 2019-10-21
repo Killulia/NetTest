@@ -1,13 +1,11 @@
 package com.bksx.nettest.fragment;
 
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.helper.widget.Flow;
@@ -31,7 +29,7 @@ public class BuildingFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    Unbinder unbinder;
+    private Unbinder unbinder;
     @BindView(R.id.rv_unit)
     RecyclerView rvUnit;
     @BindView(R.id.iv_rc1)
@@ -56,10 +54,7 @@ public class BuildingFragment extends Fragment {
 
     private UnitAdapter unitAdapter;
     private List<Unit> unitList = new ArrayList<>();
-    private LinearLayoutManager layoutManager;
 
-    private Drawable dwCircle;
-    private Drawable dwRectangle;
 
     public BuildingFragment() {
     }
@@ -94,7 +89,7 @@ public class BuildingFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initView(view);
+        initView();
         initData();
     }
 
@@ -111,9 +106,9 @@ public class BuildingFragment extends Fragment {
         unitAdapter.notifyDataSetChanged();
     }
 
-    private void initView(View view) {
+    private void initView() {
         //单元列表
-        layoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         unitAdapter = new UnitAdapter(R.layout.item_unit, unitList);
         unitAdapter.setOnItemClickListener((adapter, view1, position) -> {

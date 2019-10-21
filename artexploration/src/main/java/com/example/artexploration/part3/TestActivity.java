@@ -1,12 +1,10 @@
 package com.example.artexploration.part3;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-
 import com.example.artexploration.R;
 
 public class TestActivity extends AppCompatActivity {
@@ -20,7 +18,7 @@ public class TestActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Log.d("ccg", "onTouch:"+event.getAction());
-                return true;
+                return false;
             }
         });
         button.setOnClickListener(new View.OnClickListener() {

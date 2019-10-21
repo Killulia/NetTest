@@ -27,6 +27,6 @@ public class MyView extends AppCompatButton {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.d("ccg", "onTouchEvent/View:"+event.getAction());
-        return super.onTouchEvent(event);
+        return false;
     }
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <!--底层使用蓝色填充色-->
+<!--    <item>-->
+<!--        <shape>-->
+<!--            <solid android:color="#02a0ef"/>-->
+<!--        </shape>-->
+<!--    </item>-->
+
+    <!--上面一层距离底层的顶部1dp,距离底部1dp,类似marginTop,填充色为白色，这样就形成了一个带有蓝色顶部边线和底部边线的白色背景的图-->
+<!--    <item android:left="5dp"-->
+<!--        android:right="5dp">-->
+<!--        <shape>-->
+<!--            <solid android:color="#fff"/>-->
+<!--        </shape>-->
+<!--    </item>-->
+
+
+    <!--底层的左边距离上层左边3dp, 底层的顶部，距离上层的顶部6dp,如果不做这个控制，底层和上层的左侧和上侧会重合在一起-->
+    <item android:left="3dp"
+        android:top="6dp">
+        <shape>
+            <solid android:color="#b4b5b6"/>
+        </shape>
+    </item>
+
+    <!--上层的右边距离底层的右边3dp, 上层的底部距离底层的底部6dp-->
+    <item android:bottom="6dp"
+        android:right="3dp">
+        <shape>
+            <solid android:color="#fff"/>
+        </shape>
+    </item>
+
+</layer-list>
