@@ -34,4 +34,13 @@ open class Two {
     fun five(){
         util()
     }
+
+    fun six(){
+        val list = arrayListOf(1,2,3,4)
+        list.add(5)
+        for (i in list) {
+            println(i)
+        }
+
+    }
 }

@@ -4,16 +4,14 @@ import android.content.Context;
 import android.util.Log;
 
 import com.bksx.nettest.gen.DaoMaster;
-import com.bksx.nettest.gen.DaoSession;
-import com.bksx.nettest.gen.RegionCodeDao;
-import com.bksx.nettest.utils.MigrationHelper;
+
 
 import org.greenrobot.greendao.database.Database;
 
 public class Helper extends DaoMaster.DevOpenHelper{
 
 
-    public Helper(Context context, String name) {
+    Helper(Context context, String name) {
         super(context, name);
     }
 

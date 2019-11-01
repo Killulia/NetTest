@@ -17,6 +17,7 @@ class LoginActivity : AppCompatActivity(), LoginView, View.OnClickListener {
     private lateinit var btLogin: Button
     private lateinit var loginPresenterImp: LoginPresenterImp
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

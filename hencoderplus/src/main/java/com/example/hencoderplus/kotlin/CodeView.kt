@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 import com.example.hencoderplus.R
 
-class CodeView : AppCompatTextView {
+ class CodeView : AppCompatTextView {
 
     private var paint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val t1: String = "FLASH"

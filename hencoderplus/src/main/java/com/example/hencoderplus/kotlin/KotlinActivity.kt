@@ -1,5 +1,6 @@
 package com.example.hencoderplus.kotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,10 +10,19 @@ import com.example.hencoderplus.R
 
 class KotlinActivity : AppCompatActivity(), View.OnClickListener {
 
+    private val usernameKey = "usernameKey"
+    private val passwordKey = "passwordKey"
+
+
     private lateinit var etName: EditText
     private lateinit var etPassword:EditText
     private lateinit var btLogin: Button
     private lateinit var cvTest: CodeView
+
+
+    companion object{
+        private const val TEST = "编译期常量测试"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,12 +43,12 @@ class KotlinActivity : AppCompatActivity(), View.OnClickListener {
             login()
         }else if (v is CodeView){
             v.updateCode()
-            Utils.toast("验证")
+            Utils.toast(TEST)
         }
     }
 
     private fun login() {
-
+        startActivity(Intent(this,LessonActivity::class.java))
     }
 
 }

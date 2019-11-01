@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.testlibrary.ModuleTest
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,9 +31,11 @@ class MainActivity : AppCompatActivity() {
 //        println(s2)
         Log.d("ccg",s2)
 
+
+
     }
 
-    fun check(view : View?){
+    private fun check(view : View?){
         Log.d("ccg", view?.id.toString())
     }
 

@@ -9,12 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".part6.NotifyActivity"></activity>
         <activity android:name=".part3.TestActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity android:name=".part1.TransparentActivity">
             <intent-filter>
@@ -28,15 +29,18 @@
         </activity>
         <activity
             android:name=".part1.TestActivity"
-            android:configChanges="orientation">
-
-        </activity>
-
+            android:configChanges="orientation"></activity>
         <activity android:name=".part12.GridviewActivity" />
-
         <activity android:name=".part12.BitmapActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".part10.ThreadActivity" />
+
         <service
             android:name=".part10.MyIntentService"
             android:exported="false" />

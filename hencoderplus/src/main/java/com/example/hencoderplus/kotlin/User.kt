@@ -2,7 +2,6 @@ package com.example.hencoderplus.kotlin;
 
 
 class User(name: String) {
-
     var id:Int? = null
     var name:String? = ""
     get() = field + "ddd"
