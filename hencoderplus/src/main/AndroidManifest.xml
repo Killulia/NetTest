@@ -12,16 +12,22 @@
         android:theme="@style/AppTheme">
         <activity android:name=".kotlin.LessonActivity"></activity>
         <activity android:name=".kotlin.KotlinActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".rxjava.RxJavaActivity" />
+        <activity android:name=".constraint.ConstraintActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".recyclerview.RecyclerActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".rxjava.RxJavaActivity" />
-        <activity android:name=".constraint.ConstraintActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".recyclerview.RecyclerviewActivity" />
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />

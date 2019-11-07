@@ -7,7 +7,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
-
 import com.example.hencoderplus.R;
 import java.util.ArrayList;
 import java.util.List;
