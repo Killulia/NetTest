@@ -39,11 +39,11 @@ public class RecyclerActivity extends AppCompatActivity {
         /*  recyclerView  */
         rvTest = findViewById(R.id.rv_test);
         sl = findViewById(R.id.smart);
-        rvTest.setLayoutManager(new LinearLayoutManager(this));
+        //RecyclerView的原生Bug，在数据更新时会出现Inconsistency detected. Invalid view holder adapter positionViewHolder这个Bug，
+        //错误解决的方式是自定义一个LayoutManager，重写onLayoutChildren方法，在遇到这个异常时，直接抛出异常。
+        rvTest.setLayoutManager(new WrapContentLinearLayoutManager(this));
         rvTest.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        adapter = new DemoAdapter(this);
-        adapter.setList(users);
-        Log.d("ccg", "old size1:" + adapter.getData().size());
+        adapter = new DemoAdapter(this, users);
         adapter.setOnItemClickListener(new DemoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
@@ -55,37 +55,25 @@ public class RecyclerActivity extends AppCompatActivity {
         sl.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {
-                refreshData();
+                List<User> news = new ArrayList<>();
+                news.add(new User("001", "龙珠"));
+                news.add(new User("002", "火影"));
+                news.add(new User("003", "海贼"));
+                news.add(new User("004", "灌篮"));
+                User user5 = new User("005", "EVA");
+                if (count > 1) {
+                    user5.setName("巨人");
+                    news.add(new User("006", "高达"));
+                }
+                news.add(user5);
+                adapter.refreshData(news);
                 sl.finishRefresh();
+                count++;
             }
         });
     }
 
-    private void refreshData() {
-        List<User> news = new ArrayList<>();
-        news.add(new User("001", "龙珠"));
-        news.add(new User("002", "火影"));
-        news.add(new User("003", "海贼"));
-        news.add(new User("004", "灌篮"));
-        User user5 = new User("005", "EVA");
-        if (count>1){
-            Log.d("ccg", "巨人");
-            user5.setName("巨人");
-        }
-        news.add(user5);
-        Log.d("ccg", "old size:" + adapter.getData().size());
-        if (adapter.getData().size()>0){
-            DiffUtil.DiffResult result = DiffUtil.calculateDiff(new MyDiffCallback(adapter.getData(), news));
-            adapter.setList(news);
-            result.dispatchUpdatesTo(adapter);
-        }else {
-            adapter.setList(news);
-            adapter.notifyDataSetChanged();
-        }
 
-//        adapter.refresh(users);
-        count++;
-    }
 
 
 }

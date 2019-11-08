@@ -30,8 +30,9 @@ public class DemoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
     private static final int VIEW_TYPE_EMPTY = 0;
 
 
-    DemoAdapter(Context context) {
+    DemoAdapter(Context context, List<User> users) {
         this.context = context;
+        this.list = users;
     }
 
     void setOnItemClickListener(OnItemClickListener listener) {
@@ -79,15 +80,7 @@ public class DemoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
                 Bundle payload = (Bundle) payloads.get(0);
                 ListHolder listHolder = (ListHolder) holder;
                 listHolder.itemView.setTag(position);
-                for (String key : payload.keySet()) {
-                    switch (key) {
-                        case "NAME":
-                            listHolder.tvName.setText((CharSequence) payload.get(key));
-                            break;
-                        default:
-                            break;
-                    }
-                }
+                listHolder.tvName.setText(payload.getString("NAME"));
             }
 
         }
@@ -107,17 +100,29 @@ public class DemoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
     }
 
 
-
-
     void setList(List<User> list) {
         this.list = list;
     }
 
     List<User> getData() {
-        return list;
+        return this.list;
     }
 
-    static class ListHolder extends RecyclerView.ViewHolder {
+    void refreshData(List<User> news) {
+        DiffUtil.DiffResult result = DiffUtil.calculateDiff(new MyDiffCallback(this.list, news));
+        this.list.clear();
+        this.list.addAll(news);
+        result.dispatchUpdatesTo(this);
+    }
+
+    public void insertOne(){
+        User user = new User("000","新人");
+        list.add(user);
+        notifyItemInserted(0);
+    }
+
+
+        static class ListHolder extends RecyclerView.ViewHolder {
 
         TextView tvName;
 

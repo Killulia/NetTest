@@ -20,12 +20,12 @@ public class MyDiffCallback extends DiffUtil.Callback {
 
     @Override
     public int getOldListSize() {
-        return oldUsers.size();
+        return oldUsers!=null?oldUsers.size():0;
     }
 
     @Override
     public int getNewListSize() {
-        return newUsers.size();
+        return newUsers!=null?newUsers.size():0;
     }
 
     @Override
