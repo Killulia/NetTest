@@ -6,7 +6,7 @@ import java.io.File
 var a = "a"
 val b = "${a.replace("a", "b")},old is $a"
 fun main() {
-
+   nullTest()
 }
 
 fun maxOf(a: Int, b: Int) = if (a > b) "big" else "small"
@@ -84,6 +84,32 @@ fun typeJudge(x:Any){
         is A -> print("A")
         is B -> print("B")
         else -> print("Other")
+    }
+}
+
+fun mapTest(){
+    val map = mapOf("a" to 1,"b" to 2)
+    for ((k, v) in map) {
+        println("$k -> $v")
+    }
+    print(map["a"])
+}
+
+fun nullTest(){
+    val nt: String? = null
+    println(nt?.length ?: "empty")
+    val list: List<Int>? = null
+    val outList = list?.firstOrNull() ?: ""
+
+}
+
+fun foo(param: Int) {
+    val result = if (param == 1) {
+        "one"
+    } else if (param == 2) {
+        "two"
+    } else {
+        "three"
     }
 }
 class A{}
