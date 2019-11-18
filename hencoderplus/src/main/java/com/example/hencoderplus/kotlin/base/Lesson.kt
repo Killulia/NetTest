@@ -1,4 +1,4 @@
-package com.example.hencoderplus.kotlin
+package com.example.hencoderplus.kotlin.base
 
 class Lesson(var date: String?, var content: String?, var state: State?) {
     enum class State {

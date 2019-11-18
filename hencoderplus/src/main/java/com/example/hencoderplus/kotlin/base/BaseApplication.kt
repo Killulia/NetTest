@@ -1,4 +1,4 @@
-package com.example.hencoderplus.kotlin
+package com.example.hencoderplus.kotlin.base
 
 import android.app.Application
 import android.content.Context

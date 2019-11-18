@@ -1,4 +1,4 @@
-package com.example.hencoderplus.kotlin
+package com.example.hencoderplus.kotlin.base
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -48,7 +48,7 @@ class KotlinActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun login() {
-        startActivity(Intent(this,LessonActivity::class.java))
+        startActivity(Intent(this, LessonActivity::class.java))
     }
 
 }

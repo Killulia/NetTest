@@ -1,4 +1,4 @@
-package com.example.hencoderplus.kotlin
+package com.example.hencoderplus.kotlin.base
 
 
 fun main(){
@@ -6,11 +6,11 @@ fun main(){
     val b: Int? = 2
     var a: String = ""
     val aInt: Int? = a as? Int
-    var user:User = User("king")
+    var user: User = User("king")
 
 //    println("user:${user.name}")
 //    println("user:${user.id?.plus(2)}")
-    var user2:User = User(1,"alpha")
+    var user2: User = User(1, "alpha")
 
 
 //    var animal = Animal()

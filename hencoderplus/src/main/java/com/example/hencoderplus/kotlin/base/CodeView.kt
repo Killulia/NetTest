@@ -1,4 +1,4 @@
-package com.example.hencoderplus.kotlin
+package com.example.hencoderplus.kotlin.base
 
 
 import android.content.Context
@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 import com.example.hencoderplus.R
 
- class CodeView : AppCompatTextView {
+ class CodeView (context: Context?, val attrs: AttributeSet?): AppCompatTextView(context, attrs) {
 
     private var paint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val t1: String = "FLASH"
@@ -29,7 +29,6 @@ import com.example.hencoderplus.R
 
     constructor(context: Context?) : this(context, null)
 
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
 
 
     override fun onDraw(canvas: Canvas?) {

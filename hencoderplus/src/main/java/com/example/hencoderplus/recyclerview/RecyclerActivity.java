@@ -39,7 +39,7 @@ public class RecyclerActivity extends AppCompatActivity {
         /*  recyclerView  */
         rvTest = findViewById(R.id.rv_test);
         sl = findViewById(R.id.smart);
-        //RecyclerView的原生Bug，在数据更新时会出现Inconsistency detected. Invalid view holder adapter positionViewHolder这个Bug，
+        //RecyclerView的原生Bug，在数据更新时（尤其是加了DiffUtil）会出现Inconsistency detected. Invalid view holder adapter positionViewHolder这个Bug，
         //错误解决的方式是自定义一个LayoutManager，重写onLayoutChildren方法，在遇到这个异常时，直接抛出异常。
         rvTest.setLayoutManager(new WrapContentLinearLayoutManager(this));
         rvTest.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));

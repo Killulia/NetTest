@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.hencoderplus.kotlin.KotlinActivity">
+    tools:context="com.example.hencoderplus.kotlin.base.KotlinActivity">
 
     <EditText
         android:id="@+id/et_name"
@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="@id/et_name"
         app:layout_constraintTop_toBottomOf="@id/et_name" />
 
-    <com.example.hencoderplus.kotlin.CodeView
+    <com.example.hencoderplus.kotlin.base.CodeView
         android:id="@+id/cv_msg"
         android:layout_width="80dp"
         android:layout_height="50dp"

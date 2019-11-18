@@ -1,4 +1,4 @@
-package com.example.hencoderplus.kotlin
+package com.example.hencoderplus.kotlin.base
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

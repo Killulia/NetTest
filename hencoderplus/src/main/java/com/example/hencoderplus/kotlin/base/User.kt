@@ -1,4 +1,4 @@
-package com.example.hencoderplus.kotlin;
+package com.example.hencoderplus.kotlin.base;
 
 
 class User(name: String) {
