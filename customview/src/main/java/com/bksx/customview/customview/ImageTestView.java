@@ -61,8 +61,8 @@ public class ImageTestView extends View {
         float yOffset = paint.getFontSpacing();
         int usableWidth;
         for (int start = 0, count; start < length; start += count, yOffset += paint.getFontSpacing()) {
-            float textTop = yOffset + metrics.ascent;
-            float textBottom = yOffset + metrics.descent;
+            float textTop = yOffset + metrics.top;
+            float textBottom = yOffset + metrics.bottom;
             if (textTop > IMAGE_PADDING && textTop < IMAGE_PADDING + IMAGE_WIDTH ||
                     textBottom > IMAGE_PADDING && textBottom < IMAGE_PADDING + IMAGE_WIDTH) {
                 usableWidth = getWidth() - IMAGE_WIDTH;

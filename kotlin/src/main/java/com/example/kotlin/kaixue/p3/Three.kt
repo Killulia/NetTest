@@ -11,7 +11,6 @@ fun main() {
     pA2.display()
     sayHi(age = 21, isStudent = false)
     login("殇不患", "123", "用户名和密码不能为空")
-    range()
 
 //    login("", "", "用户名和密码不能为空")
 }
@@ -108,6 +107,10 @@ fun whenTest(){
         else -> println("error")
     }
 }
+
+
+
+
 
 
 /*

@@ -2,44 +2,37 @@ package com.example.kotlin
 
 
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.testlibrary.ModuleTest
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var tvTest:TextView
+    private lateinit var rvTest:RecyclerView
+    private val data = arrayListOf("砸瓦鲁多","黑蚊子多","欧拉欧拉","木大木大","基拉奎因","败者食尘")
+    private var adapter: MyAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var x = 5
-        x += 3
-        Toast.makeText(this,"sury",Toast.LENGTH_SHORT).show()
-        tvTest = findViewById(R.id.tv_test)
-        check(tvTest)
-    }
-
-    private fun test() {
-        var a = 1
-        val s1 = "a is $a"
-        a = 2
-        val s2 = "${s1.replace("is","was")},but now is $a"
-//        println(s2)
-        Log.d("ccg",s2)
-
-
+        initView()
 
     }
 
-    private fun check(view : View?){
-        Log.d("ccg", view?.id.toString())
+
+
+    private fun initView() {
+        rvTest = findViewById(R.id.rv_test)
+        rvTest.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        rvTest.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        adapter = MyAdapter(this,data)
+        adapter?.setOnItemClickListener{
+            position, _ -> Toast.makeText(this,"position:$position",Toast.LENGTH_SHORT).show()
+        }
+        rvTest.adapter = adapter
     }
-
-
 
 
 }

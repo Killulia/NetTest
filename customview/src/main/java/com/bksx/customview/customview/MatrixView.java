@@ -57,7 +57,7 @@ public class MatrixView extends View {
 //        canvas.drawBitmap(bitmap, (getWidth() / 2)-(IMAGE_WIDTH / 2), (getHeight() / 2)-(IMAGE_WIDTH / 2), paint);
         //plan B 这种是完成旋转后在现在的坐标系下画bitmap,再把坐标系移回去
         canvas.drawBitmap(bitmap, -(IMAGE_WIDTH / 2), -(IMAGE_WIDTH / 2), paint);
-        canvas.translate(-(getWidth() / 2), -(getHeight() / 2));
+        canvas.translate(-(getWidth() >> 1), -(getHeight() >> 1));
 
 
 

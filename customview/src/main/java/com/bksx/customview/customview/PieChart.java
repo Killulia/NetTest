@@ -17,6 +17,7 @@ public class PieChart extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     RectF bounds = new RectF();
     private static final float RADIUS = Utils.dp2px(150);
+    private static final int PULLED_INDEX = 3;
     private static final float PULLED_LENTH = Utils.dp2px(20);
     int[] colors = {
             Color.parseColor("#1ABDE6"),
@@ -25,7 +26,7 @@ public class PieChart extends View {
             Color.parseColor("#875EA2"),
     };
     int[] angels = {60,100,120,80};
-    public static final int PULLED_INDEX = 3;
+
 
     public PieChart(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);

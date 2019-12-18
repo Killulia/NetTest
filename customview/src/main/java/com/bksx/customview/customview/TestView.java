@@ -37,8 +37,6 @@ public class TestView extends View {
         dash.addRect(0,0,Utils.dp2px(2),Utils.dp2px(10),Path.Direction.CCW);
         arcPath = new Path();
 
-
-
     }
 
     @Override
@@ -52,6 +50,7 @@ public class TestView extends View {
                 getWidth() / 2 + RADIUS,getHeight() /2+RADIUS,90 + ANGLE / 2,
                 360 - ANGLE);
         pathMeasure = new PathMeasure(arcPath,false);
+        //advance 是两个相邻的 shape 段之间的间隔，不过注意，这个间隔是两个 shape 段的起点的间隔，而不是前一个的终点和后一个的起点的距离
         pathEffect = new PathDashPathEffect(dash,  (pathMeasure.getLength()-Utils.dp2px(2))/20, 0, PathDashPathEffect.Style.ROTATE);
 
     }

@@ -1,7 +1,7 @@
 package com.example.hencoderplus.kotlin.pro
 
 import android.view.View
-import com.example.hencoderplus.recyclerview.DemoAdapter
+import android.widget.Toast
 
 
 //扩展函数，不改变原有的类为其增加函数,比如可以避免写各种XXUtils,都放在一个kt文件的top level
@@ -23,18 +23,36 @@ fun main(){
 
     expandTest()
 
-    inTest()
+//    inTest()
 
-    val view = View()
+    val view = TheView()
     view.setOnclickListener { onClick() }
+    // 调用
+    test(10) { num1: Int, num2: Int ->  num1 + num2 }  // 结果为：18
+    proFunction()
 
 
 }
+
+
+// lambda
+fun test(a : Int , b : (num1 : Int , num2 : Int) -> Int) : Int{
+    return a + b.invoke(3,5)
+}
+
+
+
 /*
 内敛函数，代码会直接复制到调用处，可反编译验证，适合传入的参数为函数类型时使用
  */
 inline fun inTest(){
     println("inline")
+}
+
+fun onClick() {
+    println("click1")
+    println("click2")
+    println("click3")
 }
 
 fun whenTest(){
@@ -62,6 +80,7 @@ fun forTest(){
 fun lambdaTest(){
     val list = listOf(1,2,3,4)
     list.forEach { it + 1 }
+
 }
 
 fun companyObject(){
@@ -76,12 +95,37 @@ fun expandTest(){
 
 
 
-fun onClick(){
-    println("click")
+fun onItemClick(view: View, position:Int){
+    println("view is $view,position is $position")
 }
 
-class View{
-    fun setOnclickListener(listener: (View) -> Unit){
-
+/*
+高阶函数
+ */
+fun proFunction(){
+    fun addNum(a:Int,b:Int,add:(Int) -> Unit){
+        val result = a + b
+        add(result)
     }
+
+    addNum(1,2){
+        print("a + b = $it")
+    }
+
+    val repeatFun: String.(Int) -> String = { times -> this.repeat(times) }
+    var str:String = "ff".repeatFun(2)
+    val twoParameters: (String, Int) -> String = repeatFun // OK
+}
+
+
+
+
+
+class TheView{
+    inline fun setOnclickListener(listener: () -> Unit){
+        listener()
+        println("ccc")
+    }
+
+
 }

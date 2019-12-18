@@ -39,13 +39,16 @@ public class DemoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
         this.listner = listener;
     }
 
-    @Override
-    public int getItemViewType(int position) {
-        if (list.size() == 0) {
-            return VIEW_TYPE_EMPTY;
-        }
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
 
-        return VIEW_TYPE_ITEM;
+    @Override
+    public void onClick(View v) {
+        int position = (int) v.getTag();
+        if (listner != null) {
+            listner.onItemClick(v, position);
+        }
     }
 
     @NonNull
@@ -59,6 +62,15 @@ public class DemoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list, parent, false);
         itemView.setOnClickListener(this);
         return new ListHolder(itemView);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (list.size() == 0) {
+            return VIEW_TYPE_EMPTY;
+        }
+
+        return VIEW_TYPE_ITEM;
     }
 
     @Override
@@ -91,13 +103,7 @@ public class DemoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
         return list.size() > 0 ? list.size() : 1;
     }
 
-    @Override
-    public void onClick(View v) {
-        int position = (int) v.getTag();
-        if (listner != null) {
-            listner.onItemClick(v, position);
-        }
-    }
+
 
 
     void setList(List<User> list) {
@@ -142,7 +148,5 @@ public class DemoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
         }
     }
 
-    public interface OnItemClickListener {
-        void onItemClick(View view, int position);
-    }
+
 }

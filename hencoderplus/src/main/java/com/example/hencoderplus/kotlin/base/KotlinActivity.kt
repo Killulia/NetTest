@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import com.example.hencoderplus.R
 
-class KotlinActivity : AppCompatActivity(), View.OnClickListener {
+class KotlinActivity : AppCompatActivity() {
 
     private val usernameKey = "usernameKey"
     private val passwordKey = "passwordKey"
@@ -32,20 +32,24 @@ class KotlinActivity : AppCompatActivity(), View.OnClickListener {
         etPassword = findViewById(R.id.et_password)
         btLogin = findViewById(R.id.bt_login)
         cvTest = findViewById(R.id.cv_msg)
-        btLogin.setOnClickListener(this)
-        cvTest.setOnClickListener(this)
-
-
-    }
-
-    override fun onClick(v: View?) {
-        if (v is Button){
-            login()
-        }else if (v is CodeView){
-            v.updateCode()
+        btLogin.setOnClickListener{login()}
+        cvTest.setOnClickListener{
+            (it as CodeView).updateCode()
             Utils.toast(TEST)
         }
+
+
     }
+
+//     用函数参数代替
+//    override fun onClick(v: View?) {
+//        if (v is Button){
+//            login()
+//        }else if (v is CodeView){
+//            v.updateCode()
+//            Utils.toast(TEST)
+//        }
+//    }
 
     private fun login() {
         startActivity(Intent(this, LessonActivity::class.java))

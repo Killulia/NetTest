@@ -2,6 +2,9 @@ package com.example.hencoderplus.kotlin.pro;
 
 import android.app.Application;
 
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+
 public class CallTest {
     private Application application;
     public  void main(String[] args) {
@@ -11,6 +14,7 @@ public class CallTest {
 //        application = (Application) BaseApplication.getCurrentApplication();
         //3  给currentApplication get方法加注解同时可以自定义名，使用kotlin的方式调用
         application = (Application) BaseApplication.application();
+
 
     }
 
