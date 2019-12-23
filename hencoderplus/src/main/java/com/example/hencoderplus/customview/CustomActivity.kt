@@ -1,5 +1,6 @@
 package com.example.hencoderplus.customview
 
+import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +14,13 @@ class CustomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_custom)
 
+    }
+
+    private fun animatorTest(){
+        val circle:CircleView = findViewById(R.id.cv)
+        val animator = ObjectAnimator.ofFloat(circle,"radius", dp2px(180F))
+        animator.startDelay = 2000
+        animator.start()
     }
 
     private fun layoutInflaterTest() {
