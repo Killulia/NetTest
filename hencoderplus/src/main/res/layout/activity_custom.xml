@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.hencoderplus.customview.CustomActivity">
-    <com.example.hencoderplus.customview.CameraView
+    <com.example.hencoderplus.customview.CameraView2
         android:id="@+id/cv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
