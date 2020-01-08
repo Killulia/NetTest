@@ -22,8 +22,8 @@ class PoneActivity : AppCompatActivity() {
         tvTest = findViewById(R.id.tv_test)
         three(a)
 //        four(d)
-        var user = User()
-        user.name = "key"
+        var user = User("key")
+//        user.name = "key"
         Log.d("ccg",user.name)
         six(tvTest)
 

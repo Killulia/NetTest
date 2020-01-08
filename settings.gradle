@@ -1,1 +1,1 @@
-include ':app', ':customview', ':mvptest', ':framework', ':artexploration', ':kotlin', ':hencoderplus', ':io', ':loginmvp', ':other', ':jetpack', ':testlibrary', ':bilibili'
+include ':app', ':customview', ':mvptest', ':framework', ':artexploration', ':kotlin', ':hencoderplus', ':io', ':loginmvp', ':other', ':developers', ':testlibrary', ':bilibili'
