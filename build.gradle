@@ -9,13 +9,13 @@ buildscript {
 
 
     repositories {
-//        google()
+        google()
         jcenter()
         maven { url 'https://maven.google.com/' }
         maven { url 'https://jitpack.io' }
         maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
         mavenCentral()
-        google()
+//        google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'
