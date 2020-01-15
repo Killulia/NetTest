@@ -6,12 +6,22 @@ import android.provider.AlarmClock
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil.setContentView
 import com.example.developers.api.DisplayMessageActivity
+import com.example.developers.databinding.DatabindingLaoutBinding
+
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var dataBinding:DatabindingLaoutBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.test_layout)
+//        setContentView(R.layout.test_layout)
+         dataBinding= setContentView(this, R.layout.databinding_laout)
+        val user = User("User")
+        dataBinding.user = user
+
     }
 
     fun sendMessage(view: View) {
