@@ -2,22 +2,27 @@ package com.example.developers.jetpack.livedateAviewmodel
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.developers.R
 
 class TestActivity : AppCompatActivity() {
 
     private lateinit var tvNum:TextView
     private lateinit var btAdd:Button
+    private lateinit var model: TestViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test2)
+        model = ViewModelProviders.of(this).get(TestViewModel::class.java)
+        val numObserver = Observer<Int> { newName ->
+            tvNum.text = newName.toString()
+        }
+        model.currentName?.observe(this, numObserver)
         initView()
     }
 
@@ -25,6 +30,7 @@ class TestActivity : AppCompatActivity() {
         tvNum = findViewById(R.id.tvNum)
         btAdd = findViewById(R.id.btAdd)
         btAdd.setOnClickListener {
+            model.addNum(1)
         }
 
     }
