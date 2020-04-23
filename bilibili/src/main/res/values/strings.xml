@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">bilibili</string>
     <string name="bili">哔哩哔哩</string>
+    <string name="login">登录</string>
+    <string name="pwd">密码</string>
+    <string name="name">用户名</string>
+    <string name="todo">TODO</string>
 </resources>

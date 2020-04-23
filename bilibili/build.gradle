@@ -1,4 +1,4 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application' 
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
@@ -6,7 +6,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-//        applicationId "com.example.bilibili"
+        applicationId "com.example.bilibili"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1

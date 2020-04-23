@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/NetTest.iml" filepath="$PROJECT_DIR$/.idea/NetTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/artexploration/artexploration.iml" filepath="$PROJECT_DIR$/artexploration/artexploration.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bilibili/bilibili.iml" filepath="$PROJECT_DIR$/bilibili/bilibili.iml" />
-      <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" />
-      <module fileurl="file://$PROJECT_DIR$/developers/developers.iml" filepath="$PROJECT_DIR$/developers/developers.iml" />
-      <module fileurl="file://$PROJECT_DIR$/framework/framework.iml" filepath="$PROJECT_DIR$/framework/framework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hencoderplus/hencoderplus.iml" filepath="$PROJECT_DIR$/hencoderplus/hencoderplus.iml" />
-      <module fileurl="file://$PROJECT_DIR$/io/io.iml" filepath="$PROJECT_DIR$/io/io.iml" />
-      <module fileurl="file://$PROJECT_DIR$/kotlin/kotlin.iml" filepath="$PROJECT_DIR$/kotlin/kotlin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/loginmvp/loginmvp.iml" filepath="$PROJECT_DIR$/loginmvp/loginmvp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mvptest/mvptest.iml" filepath="$PROJECT_DIR$/mvptest/mvptest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/other/other.iml" filepath="$PROJECT_DIR$/other/other.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testlibrary/testlibrary.iml" filepath="$PROJECT_DIR$/testlibrary/testlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NetTest.iml" filepath="$PROJECT_DIR$/NetTest.iml" group="NetTest" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="NetTest/app" />
+      <module fileurl="file://$PROJECT_DIR$/artexploration/artexploration.iml" filepath="$PROJECT_DIR$/artexploration/artexploration.iml" group="NetTest/artexploration" />
+      <module fileurl="file://$PROJECT_DIR$/bilibili/bilibili.iml" filepath="$PROJECT_DIR$/bilibili/bilibili.iml" group="NetTest/bilibili" />
+      <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" group="NetTest/customview" />
+      <module fileurl="file://$PROJECT_DIR$/developers/developers.iml" filepath="$PROJECT_DIR$/developers/developers.iml" group="NetTest/developers" />
+      <module fileurl="file://$PROJECT_DIR$/framework/framework.iml" filepath="$PROJECT_DIR$/framework/framework.iml" group="NetTest/framework" />
+      <module fileurl="file://$PROJECT_DIR$/hencoderplus/hencoderplus.iml" filepath="$PROJECT_DIR$/hencoderplus/hencoderplus.iml" group="NetTest/hencoderplus" />
+      <module fileurl="file://$PROJECT_DIR$/io/io.iml" filepath="$PROJECT_DIR$/io/io.iml" group="NetTest/io" />
+      <module fileurl="file://$PROJECT_DIR$/kotlin/kotlin.iml" filepath="$PROJECT_DIR$/kotlin/kotlin.iml" group="NetTest/kotlin" />
+      <module fileurl="file://$PROJECT_DIR$/loginmvp/loginmvp.iml" filepath="$PROJECT_DIR$/loginmvp/loginmvp.iml" group="NetTest/loginmvp" />
+      <module fileurl="file://$PROJECT_DIR$/mvptest/mvptest.iml" filepath="$PROJECT_DIR$/mvptest/mvptest.iml" group="NetTest/mvptest" />
+      <module fileurl="file://$PROJECT_DIR$/other/other.iml" filepath="$PROJECT_DIR$/other/other.iml" group="NetTest/other" />
+      <module fileurl="file://$PROJECT_DIR$/testlibrary/testlibrary.iml" filepath="$PROJECT_DIR$/testlibrary/testlibrary.iml" group="NetTest/testlibrary" />
     </modules>
   </component>
 </project>

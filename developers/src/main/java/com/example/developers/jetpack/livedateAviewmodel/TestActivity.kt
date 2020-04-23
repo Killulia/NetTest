@@ -2,6 +2,7 @@ package com.example.developers.jetpack.livedateAviewmodel
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.Observer
@@ -33,5 +34,10 @@ class TestActivity : AppCompatActivity() {
             model.addNum(1)
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("ccg","destroy")
     }
 }

@@ -3,6 +3,7 @@ package com.example.developers.api
 import android.animation.Animator
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.Animation
@@ -18,7 +19,7 @@ class TestActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dataBinding= DataBindingUtil.setContentView(this,R.layout.activity_test)
-        animation()
+        activity1()
     }
 
     private fun animation() {
@@ -34,5 +35,12 @@ class TestActivity : AppCompatActivity() {
                     start()
                 }
 
+    }
+
+    private fun activity1(){
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            putExtra(Intent.EXTRA_EMAIL,"dst")
+        }
+        startActivity(intent)
     }
 }

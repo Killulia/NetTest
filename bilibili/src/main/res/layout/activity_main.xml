@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,14 +8,42 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bili"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="107dp"
+        android:text="第一行"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/bili" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第二行文字呀"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/barrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="史蒂芬静不所都偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶决胜巅峰付付付付付付付付付付付付付付付付付付付佛所文字呀史蒂芬静不所都偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶决胜巅峰付付付付付付付付付付付付付付付付付付付佛所文字呀无军二史蒂芬静不所都偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶决胜巅峰付付付付付付付付付付付付付付付付付付付佛所文字呀无军二史蒂芬静不所都偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶偶决胜巅峰付付付付付付付付付付付付付付付付付付付佛所文字呀无军二无军二"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="195dp"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="textView2,textView3"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
