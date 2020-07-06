@@ -9,11 +9,13 @@
       <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" group="NetTest/customview" />
       <module fileurl="file://$PROJECT_DIR$/developers/developers.iml" filepath="$PROJECT_DIR$/developers/developers.iml" group="NetTest/developers" />
       <module fileurl="file://$PROJECT_DIR$/framework/framework.iml" filepath="$PROJECT_DIR$/framework/framework.iml" group="NetTest/framework" />
+      <module fileurl="file://$PROJECT_DIR$/gradletest/gradletest.iml" filepath="$PROJECT_DIR$/gradletest/gradletest.iml" group="NetTest/gradletest" />
       <module fileurl="file://$PROJECT_DIR$/hencoderplus/hencoderplus.iml" filepath="$PROJECT_DIR$/hencoderplus/hencoderplus.iml" group="NetTest/hencoderplus" />
       <module fileurl="file://$PROJECT_DIR$/io/io.iml" filepath="$PROJECT_DIR$/io/io.iml" group="NetTest/io" />
       <module fileurl="file://$PROJECT_DIR$/kotlin/kotlin.iml" filepath="$PROJECT_DIR$/kotlin/kotlin.iml" group="NetTest/kotlin" />
       <module fileurl="file://$PROJECT_DIR$/loginmvp/loginmvp.iml" filepath="$PROJECT_DIR$/loginmvp/loginmvp.iml" group="NetTest/loginmvp" />
       <module fileurl="file://$PROJECT_DIR$/mvptest/mvptest.iml" filepath="$PROJECT_DIR$/mvptest/mvptest.iml" group="NetTest/mvptest" />
+      <module fileurl="file://$PROJECT_DIR$/net/net.iml" filepath="$PROJECT_DIR$/net/net.iml" group="NetTest/net" />
       <module fileurl="file://$PROJECT_DIR$/other/other.iml" filepath="$PROJECT_DIR$/other/other.iml" group="NetTest/other" />
       <module fileurl="file://$PROJECT_DIR$/testlibrary/testlibrary.iml" filepath="$PROJECT_DIR$/testlibrary/testlibrary.iml" group="NetTest/testlibrary" />
     </modules>

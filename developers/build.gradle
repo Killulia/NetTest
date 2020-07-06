@@ -9,6 +9,11 @@ android {
         enabled = true
     }
 
+    configurations {
+        cleanedAnnotations
+        compile.exclude group: 'org.jetbrains' , module:'annotations'
+    }
+
     defaultConfig {
         applicationId 'com.example.developers'
         minSdkVersion 21

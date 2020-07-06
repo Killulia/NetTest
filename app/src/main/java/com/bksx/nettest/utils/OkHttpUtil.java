@@ -1,17 +1,24 @@
 package com.bksx.nettest.utils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
+import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.Request.Builder;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 /**
  * Created by try on 2018/5/8.
@@ -59,6 +66,22 @@ public class OkHttpUtil {
         return request;
     }
 
+    //构建JSON请求体
+    private static RequestBody getJSONRequestBody(Map<String,String> formMap) throws JSONException {
+        JSONObject object = new JSONObject();
+        if (formMap != null && !formMap.isEmpty()) {
+            for (Map.Entry<String,String> entry:formMap.entrySet()){
+                object.put(entry.getKey(), entry.getValue());
+            }
+        }
+        MediaType JSON = MediaType.parse("application/json");
+        return RequestBody.create(JSON, String.valueOf(object));
+
+    }
+
+
+
+    //构建表单请求体
     private static RequestBody getFormRequestBody(Map<String,String> formMap){
         FormBody.Builder formBodyBuilder = new FormBody.Builder();
         if (formMap != null && !formMap.isEmpty()) {
@@ -67,9 +90,6 @@ public class OkHttpUtil {
             }
         }
         return formBodyBuilder.build();
-
-
-
 
     }
 
@@ -114,5 +134,10 @@ public class OkHttpUtil {
 
     public static void postKeyValueAsync(String url,Map<String,String> map,Callback callback){
         postRequestBodyAsync(url,getFormRequestBody(map),callback);
+    }
+
+    public static void postJSONAsync(String url, HashMap<String, String> map,Callback callback) throws JSONException {
+        Request request = getPostRequest(url, getJSONRequestBody(map));
+        getOkHttpSingletonInstance().newCall(request).enqueue(callback);
     }
 }

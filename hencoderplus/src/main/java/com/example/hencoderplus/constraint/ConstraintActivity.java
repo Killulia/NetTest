@@ -28,15 +28,18 @@ public class ConstraintActivity extends AppCompatActivity {
 //        setContentView(R.layout.constraint_barrier_and_chain);
 
         /* constraintlyout-flow_and_set */
-        setContentView(R.layout.constraint_flow);
-        constraintLayout = findViewById(R.id.cl_flow);
-        imageView = findViewById(R.id.iv_1);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onApplyClick(v);
-            }
-        });
+//        setContentView(R.layout.constraint_flow);
+//        constraintLayout = findViewById(R.id.cl_flow);
+//        imageView = findViewById(R.id.iv_1);
+//        imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onApplyClick(v);
+//            }
+//        });
+
+        /* constraintlyout-review */
+        setContentView(R.layout.constraint_review1);
 
     }
 

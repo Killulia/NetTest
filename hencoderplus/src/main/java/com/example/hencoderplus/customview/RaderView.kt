@@ -6,7 +6,6 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
-import com.example.bilibili.biliTest
 import kotlin.math.cos
 import kotlin.math.sin
 

@@ -1,8 +1,16 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\try\\Desktop\\henrelease\\release.jks')
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias = 'key0'
+        }
+    }
     compileSdkVersion 28
 
 
@@ -14,9 +22,20 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
+    }
+
+    configurations {
+        cleanedAnnotations
+        compile.exclude group: 'org.jetbrains' , module:'annotations'
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            applicationIdSuffix ".debug"
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

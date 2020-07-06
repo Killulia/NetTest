@@ -15,12 +15,13 @@ import com.bksx.customview.customview.ImageTestView;
 import com.bksx.customview.customview.MatrixTestView;
 import com.bksx.customview.customview.MatrixView;
 import com.bksx.customview.customview.RadarView;
+import com.bksx.customview.customview.RectangleView;
 import com.bksx.customview.customview.SportView;
 
 public class MainActivity extends AppCompatActivity {
 
 
-      RadarView testView;
+      RectangleView testView;
       ImageView ivAnimation;
 
     @Override
