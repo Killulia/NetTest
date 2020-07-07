@@ -6,26 +6,17 @@ import android.widget.Toast;
 
 import com.bksx.nettest.R;
 import com.bksx.nettest.bean.NewsBean;
-import com.bksx.nettest.custom.SwitchButton;
 import com.bksx.nettest.net.ApiService;
 import com.bksx.nettest.utils.Constants;
-import com.bksx.nettest.utils.OkHttp3Utils;
-import com.bksx.nettest.utils.OkHttpUtil;
 
-import java.io.IOException;
 import java.util.HashMap;
 
 import androidx.appcompat.app.AppCompatActivity;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;

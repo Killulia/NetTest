@@ -13,6 +13,12 @@ public class Utils {
                 TypedValue.COMPLEX_UNIT_DIP,dp, Resources.getSystem().getDisplayMetrics());
     }
 
+    public static float sp2px(float sp){
+        return TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_SP,sp, Resources.getSystem().getDisplayMetrics());
+    }
+
+
     public static Bitmap getHeadImg(Resources res ,int width){
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;

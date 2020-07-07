@@ -1,10 +1,6 @@
 package com.bksx.nettest.activity;
 
-import android.app.Activity;
-
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +14,6 @@ import com.bksx.nettest.bean.mob.LoginResponse;
 import com.bksx.nettest.bean.mob.RegisterResponse;
 import com.bksx.nettest.net.ApiService;
 import com.bksx.nettest.utils.Constants;
-import com.bksx.nettest.utils.OkHttp3Utils;
 
 
 import java.util.ArrayList;
@@ -27,8 +22,6 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

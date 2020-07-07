@@ -36,4 +36,5 @@ public class MyViewGroup extends RelativeLayout {
         Log.d("ccg", "onTouchEvent/ViewGroup-"+event.getAction());
         return true;
     }
+
 }
