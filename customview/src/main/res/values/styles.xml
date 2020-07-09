@@ -1,5 +1,4 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -7,13 +6,4 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
-    <declare-styleable name="TittleBar">
-        <attr name="title" format="string"/>
-        <attr name="titleSize" format="dimension"/>
-        <attr name="titleColor" format="color"/>
-        <attr name="backgroundColor" format="color"/>
-    </declare-styleable>
-
-
 </resources>

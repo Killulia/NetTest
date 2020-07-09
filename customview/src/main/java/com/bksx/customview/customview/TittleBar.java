@@ -9,14 +9,9 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
-
-import androidx.annotation.Dimension;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import com.bksx.customview.R;
-import com.bksx.customview.Utils;
 
 public class TittleBar extends ConstraintLayout {
 
@@ -34,8 +29,6 @@ public class TittleBar extends ConstraintLayout {
 
     private int backgroundColor;
 
-    private int defaultSize = (int) Utils.dp2px(65);
-    private View rootView;
     private View view;
 
     public String getTittle() {
@@ -59,7 +52,7 @@ public class TittleBar extends ConstraintLayout {
     }
 
     private void initView(final Context context) {
-        rootView = LayoutInflater.from(context).inflate(R.layout.tittlebar_layout, this, true);
+        View rootView = LayoutInflater.from(context).inflate(R.layout.tittlebar_layout, this, true);
         view = rootView.findViewById(R.id.cl_root);
         tvTittle = findViewById(R.id.tv_tittle);
         tvTittle.setText(this.tittle);

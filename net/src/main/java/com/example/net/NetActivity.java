@@ -53,9 +53,9 @@ public class NetActivity extends AppCompatActivity {
                 headerMap = new HashMap<>();
                 headerMap.put("sessionConf", Constans.SEESSION);
                 paramasMap = new HashMap<>();
-                paramasMap.put("syfw_jzbh", "c7184ace74fe453e9234e808d64bbcd7");
+                paramasMap.put("syfw_jzbh", "3cda31b6473e4202abbc46c3c249f8a8");
                 try {
-                    OkHttpUtil.postJSONAsync(Constans.YHXX, paramasMap, headerMap, new Callback() {
+                    OkHttpUtil.postJSONAsync(Constans.YHXX, paramasMap, null, new Callback() {
                         @Override
                         public void onFailure(@NotNull Call call, @NotNull IOException e) {
                             Log.d("ccg", "error:" + e.getMessage());
@@ -64,7 +64,6 @@ public class NetActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                             final String str = response.body().string();
-                            Log.d("ccg", "onResponse:" + str);
                             if (response.isSuccessful()){
                                 runOnUiThread(new Runnable() {
                                     @Override
