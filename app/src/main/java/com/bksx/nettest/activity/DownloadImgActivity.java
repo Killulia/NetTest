@@ -21,6 +21,7 @@ import com.bksx.nettest.R;
 import com.bksx.nettest.interfaces.DownloadListener;
 import com.bksx.nettest.net.ApiService;
 import com.bksx.nettest.utils.Constants;
+import com.bksx.nettest.utils.OkHttp3Utils;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;

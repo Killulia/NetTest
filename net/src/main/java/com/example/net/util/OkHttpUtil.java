@@ -31,7 +31,7 @@ public class OkHttpUtil {
                 if (client == null) {
                     client = new OkHttpClient.Builder()
                             .addInterceptor(new LoggingInterceptor())
-                            .addInterceptor(new HeaderInterceptor())
+//                            .addInterceptor(new HeaderInterceptor())
                             .build();
                 }
             }
