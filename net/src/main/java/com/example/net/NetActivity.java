@@ -43,12 +43,17 @@ public class NetActivity extends AppCompatActivity {
     private HashMap<String, String> headerMap, paramasMap;
     private SobMiniWebInterface sobMiniWebInterface;
     private retrofit2.Call<LoginResponse> call;
+    private Retrofit retrofit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_net);
-
+         retrofit = new Retrofit.Builder()
+                .baseUrl(Constans.LOGIN)
+                .client(OkHttpUtil.getOkHttpSingletonInstance())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
         initView();
     }
@@ -65,16 +70,12 @@ public class NetActivity extends AppCompatActivity {
                 paramasMap.put("imsi", "e1aa424501775aa7");
                 paramasMap.put("version", "45");
 
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(Constans.LOGIN)
-                        .client(OkHttpUtil.getOkHttpSingletonInstance())
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-
                 sobMiniWebInterface = retrofit.create(SobMiniWebInterface.class);
                 sobMiniWebInterface.getLoginResponse(paramasMap).enqueue(new retrofit2.Callback<LoginResponse>() {
                     @Override
                     public void onResponse(retrofit2.Call<LoginResponse> call, final retrofit2.Response<LoginResponse> response) {
+                        Log.d("ccg","onResponse");
+
                         if (response.isSuccessful()) {
 
                             tvResponse.setText(Objects.requireNonNull(response.body()).getReturnMsg());
@@ -85,7 +86,7 @@ public class NetActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(retrofit2.Call<LoginResponse> call, Throwable t) {
-
+                        Log.d("ccg","onFailure-"+t.getMessage());
                     }
                 });
 
