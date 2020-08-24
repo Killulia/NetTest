@@ -14,6 +14,7 @@ import com.bksx.customview.customview.ClipBitmapView;
 import com.bksx.customview.customview.ImageTestView;
 import com.bksx.customview.customview.MatrixTestView;
 import com.bksx.customview.customview.MatrixView;
+import com.bksx.customview.customview.MyDialogFragment;
 import com.bksx.customview.customview.RadarView;
 import com.bksx.customview.customview.RectangleView;
 import com.bksx.customview.customview.SportView;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
       RectangleView testView;
       ImageView ivAnimation;
+      MyDialogFragment myDialogFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
 //        animator.setStartDelay(1000);
 //        animator.start();
 
+        myDialogFragment = new MyDialogFragment();
+        myDialogFragment.show(getSupportFragmentManager(),"dialog");
 
         AnimatorSet animatorSet;
     }

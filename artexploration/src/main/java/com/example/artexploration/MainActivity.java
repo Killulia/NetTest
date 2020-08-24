@@ -1,25 +1,32 @@
 package com.example.artexploration;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.artexploration.part3.GuolinLayout;
+import com.example.artexploration.part3.SonView;
 
 public class MainActivity extends AppCompatActivity {
 
     private GuolinLayout guolinLayout;
     private Button btn1,btn2;
+    private SonView sonView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+        Context context = this;
+
 
     }
 
@@ -47,6 +54,16 @@ public class MainActivity extends AppCompatActivity {
 //                Log.d("TAG", "You clicked button2");
 //            }
 //        });
+        sonView = findViewById(R.id.sonView);
+        sonView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction()!=2){
+                    Log.e("TAG", "MainActivity-onTouch:--" + event.getAction());
+                }
+                return true;
+            }
+        });
     }
 
     private void testBoolean() {
