@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,12 +42,8 @@ public class MyDialogFragment extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d("ccg", "onCreateView");
-        if (container == null){
-            Log.d("ccg", "container == null" );
-        }
         final Window window = getDialog().getWindow();
-        rootView = Objects.requireNonNull(getActivity()).getLayoutInflater().inflate(R.layout.fragment_dialog, ((ViewGroup) window.findViewById(android.R.id.content)), false);
+        rootView = inflater.inflate(R.layout.fragment_dialog, container);
 //        rootView = Objects.requireNonNull(getActivity()).getLayoutInflater().inflate(R.layout.fragment_dialog, container, false);
 //        WindowManager.LayoutParams lp = getDialog().getWindow().getAttributes();
 //        lp.width = rootView.getLayoutParams().width;
@@ -60,35 +57,23 @@ public class MyDialogFragment extends DialogFragment {
 
     @Override
     public void onStart() {
-        Log.d("ccg", "onStart");
         super.onStart();
-
-
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        resizeDialogFragment();
-    }
-
-    private void resizeDialogFragment() {
         Dialog dialog = getDialog();
         dialog.setCanceledOnTouchOutside(false);
         Window window = dialog.getWindow();
         WindowManager.LayoutParams lp = getDialog().getWindow().getAttributes();
-        lp.width = rootView.getLayoutParams().width;
-        lp.height = rootView.getLayoutParams().height;
-        Log.d("ccg", "cl-width:" + Utils.dp2px(250));
-        Log.d("ccg", "cl-height:" + Utils.dp2px(200));
+//        lp.width = rootView.getLayoutParams().width;
+//        lp.height = rootView.getLayoutParams().height;
         Log.d("ccg", "clRoot-width:" + rootView.getLayoutParams().width);
         Log.d("ccg", "clRoot-height:" + rootView.getLayoutParams().height);
-//        lp.height = (400);//获取屏幕的宽度，定义自己的宽度
-//        lp.width = (500);
         if (window != null) {
-            window.setLayout(lp.width, lp.height);
+            window.setLayout((int) Utils.dp2px(250), (int) Utils.dp2px(200));
         }
+
+
     }
+
+
 
 
 

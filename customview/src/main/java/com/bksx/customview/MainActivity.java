@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -26,7 +27,7 @@ import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
       RectangleView testView;
       ImageView ivAnimation;
@@ -45,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
 //        animator.setStartDelay(1000);
 //        animator.start();
 
-        myDialogFragment = new MyDialogFragment();
-        myDialogFragment.show(getSupportFragmentManager(),"dialog");
+
 
         AnimatorSet animatorSet;
     }
