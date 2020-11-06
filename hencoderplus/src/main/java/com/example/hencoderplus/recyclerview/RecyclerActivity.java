@@ -43,14 +43,14 @@ public class RecyclerActivity extends AppCompatActivity {
         //错误解决的方式是自定义一个LayoutManager，重写onLayoutChildren方法，在遇到这个异常时，直接抛出异常。
         rvTest.setLayoutManager(new WrapContentLinearLayoutManager(this));
         rvTest.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        adapter = new DemoAdapter(this, users);
+        adapter = new DemoAdapter(users);
         adapter.setOnItemClickListener(new DemoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 Toast.makeText(RecyclerActivity.this, position + "", Toast.LENGTH_SHORT).show();
             }
         });
-        rvTest.setHasFixedSize(true);//当recyclerviewm高固定，item数量变化且item宽高不变时，避免重新计算item宽高度
+        rvTest.setHasFixedSize(true);//当recyclerviewm高固定
         rvTest.setAdapter(adapter);
         sl.setOnRefreshListener(new OnRefreshListener() {
             @Override

@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/artexploration" />
+            <option value="$PROJECT_DIR$/baselibrary" />
             <option value="$PROJECT_DIR$/bilibili" />
             <option value="$PROJECT_DIR$/customview" />
             <option value="$PROJECT_DIR$/developers" />
@@ -25,7 +26,6 @@
             <option value="$PROJECT_DIR$/mvptest" />
             <option value="$PROJECT_DIR$/net" />
             <option value="$PROJECT_DIR$/other" />
-            <option value="$PROJECT_DIR$/testlibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
 
-    <RelativeLayout
+    <View
         android:id="@+id/bg1"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
             android:background="@color/gztx_blue"
             android:layout_below="@id/tv1"
             />
-    </RelativeLayout>
+    </View>
 
 
 

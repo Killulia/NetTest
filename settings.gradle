@@ -1,3 +1,3 @@
-include ':app', ':customview', ':mvptest', ':framework', ':artexploration', ':kotlin', ':hencoderplus', ':io', ':loginmvp', ':other', ':developers', ':testlibrary', ':bilibili'
+include ':app', ':customview', ':mvptest', ':framework', ':artexploration', ':kotlin', ':hencoderplus', ':io', ':loginmvp', ':other', ':developers', ':baselibrary', ':bilibili'
 include ':gradletest'
 include ':net'

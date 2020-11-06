@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/NetTest.iml" filepath="$PROJECT_DIR$/NetTest.iml" group="NetTest" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="NetTest/app" />
       <module fileurl="file://$PROJECT_DIR$/artexploration/artexploration.iml" filepath="$PROJECT_DIR$/artexploration/artexploration.iml" group="NetTest/artexploration" />
+      <module fileurl="file://$PROJECT_DIR$/baselibrary/baselibrary.iml" filepath="$PROJECT_DIR$/baselibrary/baselibrary.iml" group="NetTest/baselibrary" />
       <module fileurl="file://$PROJECT_DIR$/bilibili/bilibili.iml" filepath="$PROJECT_DIR$/bilibili/bilibili.iml" group="NetTest/bilibili" />
       <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" group="NetTest/customview" />
       <module fileurl="file://$PROJECT_DIR$/developers/developers.iml" filepath="$PROJECT_DIR$/developers/developers.iml" group="NetTest/developers" />
@@ -17,7 +18,6 @@
       <module fileurl="file://$PROJECT_DIR$/mvptest/mvptest.iml" filepath="$PROJECT_DIR$/mvptest/mvptest.iml" group="NetTest/mvptest" />
       <module fileurl="file://$PROJECT_DIR$/net/net.iml" filepath="$PROJECT_DIR$/net/net.iml" group="NetTest/net" />
       <module fileurl="file://$PROJECT_DIR$/other/other.iml" filepath="$PROJECT_DIR$/other/other.iml" group="NetTest/other" />
-      <module fileurl="file://$PROJECT_DIR$/testlibrary/testlibrary.iml" filepath="$PROJECT_DIR$/testlibrary/testlibrary.iml" group="NetTest/testlibrary" />
     </modules>
   </component>
 </project>

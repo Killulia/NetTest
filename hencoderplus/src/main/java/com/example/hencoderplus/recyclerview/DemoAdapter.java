@@ -21,7 +21,6 @@ import androidx.recyclerview.widget.RecyclerView;
 public class DemoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
 
     private List<User> list;
-    private Context context;
     private OnItemClickListener listner;
     /**
      * viewType--分别为item以及空view
@@ -30,8 +29,7 @@ public class DemoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
     private static final int VIEW_TYPE_EMPTY = 0;
 
 
-    DemoAdapter(Context context, List<User> users) {
-        this.context = context;
+    DemoAdapter(List<User> users) {
         this.list = users;
     }
 
@@ -96,6 +94,15 @@ public class DemoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
             }
 
         }
+    }
+
+    /*
+    可以用来统计次数，表示可见
+     */
+    @Override
+    public void onViewAttachedToWindow(@NonNull RecyclerView.ViewHolder holder) {
+        super.onViewAttachedToWindow(holder);
+
     }
 
     @Override
